@@ -78,7 +78,7 @@
 &kp F1 &kp F2       &kp F3       &kp F4       &kp F5       &kp F6                        &trans    &trans   &trans     &kp MINUS &kp EQUAL &kp DEL
 &kp F7 &kp F8       &kp F9       &kp F10      &kp F11      &kp F12                       &trans    &trans   &trans     &trans    &kp BSLH  &kp RBKT
 &trans &trans       &kp LBRC     &kp RBRC     &kp LBKT     &kp RBKT                      &kp CARET &kp UP   &kp ASTRK  &kp LPAR  &kp RPAR  &kp PIPE
-&trans &kp LCTRL(Z) &kp LCTRL(X) &kp LCTRL(C) &kp LCTRL(V) &kp LCTRL(Y) &trans &kp F24   &kp LEFT  &kp DOWN &kp RIGHT  &kp COLON &kp BSLH  &trans
+&trans &kp LC(Z)    &kp LC(X)    &kp LC(C)    &kp LC(V)    &kp LC(Y)    &trans &kp F24   &kp LEFT  &kp DOWN &kp RIGHT  &kp COLON &kp BSLH  &trans
                     &trans       &trans       &trans       &trans       &trans &trans    &trans    &trans   &trans     &trans
             >;
 
@@ -98,7 +98,7 @@
 &ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                 &trans   &kp KP_MULTIPLY  &kp 4     &kp 5 &kp 6      &kp KP_MINUS
 &rgb_ug RGB_TOG   &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans          &trans          &trans                          &trans   &kp UP           &kp 1     &kp 2 &kp 3      &kp KP_PLUS
 &trans            &trans          &trans          &trans          &trans          &trans          &trans  &kp F24 &kp LEFT &kp DOWN         &kp RIGHT &kp 0 &kp KP_DOT &mo RET  
-                                  &trans          &trans          &trans          &trans          &trans  &trans  &trans  &trans     &trans   &trans
+                                  &trans          &trans          &trans          &trans          &trans  &trans  &trans   &trans           &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
