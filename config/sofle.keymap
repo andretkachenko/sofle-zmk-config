@@ -65,7 +65,7 @@
             bindings = <
 &kp F1 &kp F2     &kp F3    &kp F4     &kp F5      &kp F6                         &kp F6    &kp F7   &kp F8    &kp F9    &kp F10   &kp F11
 &kp F7 &kp F8     &kp F9    &kp F10    &kp F11     &kp F12                        &kp N6    &kp N7   &kp N8    &kp N9    &kp N0    &kp RBKT
-&trans &&trans    &kp LBRC  &kp RBRC   &kp LBKT    &kp RBKT                       &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp PIPE
+&trans &trans     &kp LBRC  &kp RBRC   &kp LBKT    &kp RBKT                       &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp PIPE
 &trans &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &kp C_AC_REDO &trans &kp F24   &kp LBKT  &kp RBKT &kp SEMI  &kp COLON &kp BSLH  &trans
                   &trans    &trans     &trans      &trans        &trans &trans    &trans    &trans   &trans    &trans
             >;
