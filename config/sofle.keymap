@@ -47,7 +47,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "default";
+            display-name = "main";
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   | BKSPC |
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   [   |
@@ -94,10 +94,10 @@
 // |       | =       | -       | COPY    | PASTE   |         |      |  | F24  |   <- |   v   |  ->  |  0   |  .    | ENTER |
 //                   |         |         |         |         |      |  |      |      |       |      |      |
             bindings = <
-&bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                    &trans   &kp KP_DIVIDE    &kp 7     &kp 8 &kp 9      &kp DEL
-&ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                 &trans   &kp KP_MULTIPLY  &kp 4     &kp 5 &kp 6      &kp KP_MINUS
-&rgb_ug RGB_TOG   &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans          &trans          &trans                          &trans   &kp UP           &kp 1     &kp 2 &kp 3      &kp KP_PLUS
-&trans            &trans          &trans          &trans          &trans          &trans          &trans  &kp F24 &kp LEFT &kp DOWN         &kp RIGHT &kp 0 &kp KP_DOT &mo RET  
+&bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                    &trans   &kp KP_DIVIDE    &kp N7    &kp N8 &kp N9     &kp DEL
+&ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                 &trans   &kp KP_MULTIPLY  &kp N4    &kp N5 &kp N6     &kp KP_MINUS
+&rgb_ug RGB_TOG   &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans          &trans          &trans                          &trans   &kp UP           &kp N1    &kp N2 &kp N3     &kp KP_PLUS
+&trans            &trans          &trans          &trans          &trans          &trans          &trans  &kp F24 &kp LEFT &kp DOWN         &kp RIGHT &kp N0 &kp KP_DOT &mo RET  
                                   &trans          &trans          &trans          &trans          &trans  &trans  &trans   &trans           &trans    &trans
             >;
 
