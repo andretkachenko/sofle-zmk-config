@@ -59,7 +59,7 @@
 &kp GRAVE &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp LBKT
 &kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
 &kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &kp F24    &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                 &kp LGUI &kp LALT &kp LCTRL &mo SPACE  &kp LOWER  &kp RAISE  &mo RET  &kp RCTRL &kp RALT  &kp RGUI
+                 &kp LGUI &kp LALT &kp LCTRL &kp SPACE  &mo LOWER  &mo RAISE  &kp RET  &kp RCTRL &kp RALT  &kp RGUI
             >;
 
             sensor-bindings = <&rot_kp PG_UP PG_DN>;
