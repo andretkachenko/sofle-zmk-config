@@ -62,24 +62,24 @@
                  &kp LGUI &kp LALT &kp LCTRL &kp SPACE  &mo LOWER  &mo RAISE  &kp RET  &kp RCTRL &kp RALT  &kp RGUI
             >;
 
-            sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT >;
+            sensor-bindings = <&rot_kp UP DOWN &rot_kp RIGHT LEFT >;
         };
 
         lower_layer {
             display-name = "fn";
 // TODO: Some binds are waiting for shifted keycode support.
 // ------------------------------------------------------------------------------------------------------------
-// |   F1  |  F2  |  F3 |  F4  |  F5   |  F6  |                   |      |       |       |  -   |   =   |  DEL  |
-// |   F7  |  F8  |  F9 |  F10 |  F11  |  F12 |                   |      |       |       |      |   |\  |   ]   |
+// |   F1  |  F2  |  F3 |  F4  |  F5   |  F6  |                   | F24  |       |       |  -   |   =   |  DEL  |
+// |   F7  |  F8  |  F9 |  F10 |  F11  |  F12 |                   | F23  |       |       |      |   |\  |   ]   |
 // |       |      |  {  |  }   |  [    |  ]   |                   |  ^   |   ^   |  *    |  (   |   )   |   |   |
-// |       | UNDO | CUT | COPY | PASTE | REDO |        |  | F24   |   <- |   v   |  ->   |  :   |   \   |       |
+// |       | UNDO | CUT | COPY | PASTE | REDO |        |  | trans |   <- |   v   |  ->   |  :   |   \   |       |
 //                |     |      |       |      |        |  |       |      |       |       |      |
             bindings = <
-&kp F1 &kp F2       &kp F3       &kp F4       &kp F5       &kp F6                        &trans    &trans   &trans     &kp MINUS &kp EQUAL &kp DEL
-&kp F7 &kp F8       &kp F9       &kp F10      &kp F11      &kp F12                       &trans    &trans   &trans     &trans    &kp BSLH  &kp RBKT
-&trans &trans       &kp LBRC     &kp RBRC     &kp LBKT     &kp RBKT                      &kp CARET &kp UP   &kp ASTRK  &kp LPAR  &kp RPAR  &kp PIPE
-&trans &kp LC(Z)    &kp LC(X)    &kp LC(C)    &kp LC(V)    &kp LC(Y)    &trans &kp F24   &kp LEFT  &kp DOWN &kp RIGHT  &kp COLON &kp BSLH  &trans
-                    &trans       &trans       &trans       &trans       &trans &trans    &trans    &trans   &trans     &trans
+&kp F1 &kp F2    &kp F3    &kp F4    &kp F5    &kp F6                 &kp F24   &none    &none     &kp MINUS &kp EQUAL &kp DEL
+&kp F7 &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                &kp F23   &none    &none     &none     &kp BSLH  &kp RBKT
+&none  &none     &kp LBRC  &kp RBRC  &kp LBKT  &kp RBKT               &kp CARET &kp UP   &kp ASTRK &kp LPAR  &kp RPAR  &kp PIPE
+&none  &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(Y) &none &trans &kp LEFT  &kp DOWN &kp RIGHT &kp COLON &kp BSLH  &none
+                 &none     &none     &none     &none     &none &none  &none     &none    &none     &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -88,17 +88,17 @@
         raise_layer {
             display-name = "num";
 // ------------------------------------------------------------------------------------------------------------
-// | BTCLR | BT1     | BT2     |  BT3    |  BT4    |  BT5    |                |      |   /   |  7   |  8   |   9   |  DEL  | 
-// | EXTPWR| RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                |      |   *   |  4   |  5   |   6   |  -    |
-// |RGB_TOG| RGB_BRD | RGB_BRI |         |         |         |                |      |   ^   |  1   |  2   |   3   |  +    |
-// |       | =       | -       | COPY    | PASTE   |         |      |  | F24  |   <- |   v   |  ->  |  0   |  .    | ENTER |
-//                   |         |         |         |         |      |  |      |      |       |      |      |
+// | BTCLR | BT1 | BT2 |  BT3    |  BT4    |  BT5    |                 | F24  |   /   |  7   |  8   |   9   |  DEL  | 
+// |       |     |     | RGB_SAD | RGB_SAI | RGB_EFF |                 | F23  |   *   |  4   |  5   |   6   |  -    |
+// | EXTPWR|     |     | RGB_HUD | RGB_HUI | RGB_TOG |                 |      |   ^   |  1   |  2   |   3   |  +    |
+// |       |     |     | RGB_BRD | RGB_BRI |         |      |  | trans |   <- |   v   |  ->  |  0   |  .    | ENTER |
+//               |     |         |         |         |      |  |       |      |       |      |      |
             bindings = <
-&bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                    &trans   &kp KP_DIVIDE    &kp N7    &kp N8 &kp N9     &kp DEL
-&ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                 &trans   &kp KP_MULTIPLY  &kp N4    &kp N5 &kp N6     &kp KP_MINUS
-&rgb_ug RGB_TOG   &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans          &trans          &trans                          &trans   &kp UP           &kp N1    &kp N2 &kp N3     &kp KP_PLUS
-&trans            &trans          &trans          &trans          &trans          &trans          &trans  &kp F24 &kp LEFT &kp DOWN         &kp RIGHT &kp N0 &kp KP_DOT &mo RET  
-                                  &trans          &trans          &trans          &trans          &trans  &trans  &trans   &trans           &trans    &trans
+&bt BT_CLR        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                 &kp F24  &kp KP_DIVIDE   &kp N7    &kp N8 &kp N9     &kp DEL
+&none             &none        &none        &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF              &kp F23  &kp KP_MULTIPLY &kp N4    &kp N5 &kp N6     &kp KP_MINUS
+&ext_power EP_TOG &none        &none        &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_TOG              &none    &kp UP          &kp N1    &kp N2 &kp N3     &kp KP_PLUS
+&none             &none        &none        &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none &trans &kp LEFT &kp DOWN        &kp RIGHT &kp N0 &kp KP_DOT &mo RET  
+                               &none        &none           &none           &none           &none &none  &none    &none           &none     &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
