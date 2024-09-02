@@ -69,7 +69,7 @@
 &none     &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                 &kp N7    &kp N8   &kp N9    &kp MINUS    &kp EQUAL    &kp RBKT
 &kp GRAVE &kp F6    &kp F7    &kp F8    &kp F9    &kp F10                &kp N4    &kp N5   &kp N6    &kp KP_PLUS  &kp KP_SLASH &kp KP_ASTERISK
 &none     &kp F11   &kp F12   &none     &none     &none     &none &trans &kp N1    &kp N2   &kp N3    &kp N0       &kp BSLH     &kp KP_DOT
-                    &none     &none     &none     &none     &none &none  &none     &none    &none     &none
+                    &trans    &trans    &trans    &trans    &trans &trans &trans &trans &trans &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -88,7 +88,7 @@
 &kp INS   &kp DEL   &none    &kp UP   &none     &kp PSCRN              &bt BT_CLR      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3 &bt BT_SEL 4
 &kp HOME  &kp END   &kp LEFT &kp DOWN &kp RIGHT &none                  &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_BRI &rgb_ug RGB_EFF &none        &none
 &kp PG_UP &kp PG_DN &none    &none    &none     &none     &none &trans &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_TOG &none        &none  
-                    &none    &none    &none     &none     &none &none  &none   &none    &none     &none
+                    &trans   &trans   &trans    &trans    &trans &trans &trans     &trans       &trans          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
