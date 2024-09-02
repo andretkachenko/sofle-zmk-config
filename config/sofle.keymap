@@ -39,17 +39,17 @@
         default_layer {
             display-name = "main";
 // ------------------------------------------------------------------------------------------------------------
-// |       |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
+// | ESC   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
 // | ESC   |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   [   |
 // | TAB   |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | F24   |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//               | GUI | ALT  | CTRL | SPACE|  LOWER |  | RAISE | ENTER| BKSPC | DEL  | CTRL  |
+//               | GUI | CTRL | ALT  | SPACE|  LOWER |  | RAISE | ENTER| BKSPC | DEL  | CTRL  |
             bindings = <
-&none     &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6  &kp N7    &kp N8    &kp N9    &kp N0   &none
-&kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y   &kp U     &kp I     &kp O     &kp P    &kp LBKT
-&kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H   &kp J     &kp K     &kp L     &kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &kp F24    &kp N   &kp M     &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
-                 &kp LGUI &kp LALT &kp LCTRL &kp SPACE  &mo LOWER  &mo RAISE  &kp RET &kp BSPC  &kp DEL   &kp RCTRL  
+&none     &kp N1 &kp N2   &kp N3    &kp N4    &kp N5                           &kp N6  &kp N7    &kp N8    &kp N9    &kp N0   &none
+&kp ESC   &kp Q  &kp W    &kp E     &kp R     &kp T                            &kp Y   &kp U     &kp I     &kp O     &kp P    &kp LBKT
+&kp TAB   &kp A  &kp S    &kp D     &kp F     &kp G                            &kp H   &kp J     &kp K     &kp L     &kp SEMI &kp SQT
+&kp LSHFT &kp Z  &kp X    &kp C     &kp V     &kp B      &kp C_MUTE &kp F24    &kp N   &kp M     &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
+                 &kp LGUI &kp LCTRL &kp LALT  &kp SPACE  &mo LOWER  &mo RAISE  &kp RET &kp BSPC  &kp DEL   &kp RCTRL  
             >;
 
             sensor-bindings = <&rot_kp UP DOWN &rot_kp RIGHT LEFT >;
