@@ -38,12 +38,6 @@
 
         default_layer {
             display-name = "main";
-// ------------------------------------------------------------------------------------------------------------
-// | ESC   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
-// | ESC   |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   [   |
-// | TAB   |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | F24   |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//               | GUI | CTRL | ALT  | SPACE|  LOWER |  | RAISE | ENTER| BKSPC | DEL  | CTRL  |
             bindings = <
 &kp ESC   &kp N1 &kp N2   &kp N3    &kp N4    &kp N5                           &kp N6  &kp N7    &kp N8    &kp N9    &kp N0   &none
 &kp ESC   &kp Q  &kp W    &kp E     &kp R     &kp T                            &kp Y   &kp U     &kp I     &kp O     &kp P    &kp LBKT
@@ -57,13 +51,6 @@
 
         lower_layer {
             display-name = "num";
-// TODO: Some binds are waiting for shifted keycode support.
-// ------------------------------------------------------------------------------------------------------------
-// |       | UNDO | CUT | COPY | PASTE | REDO |                   |     |     |     |      |       |       |
-// |       |  F1  |  F2 |  F3  |  F4   |  F5  |                   |  7  |  8  |  9  |  -   |   =   |   ]   |
-// |   `   |  F6  |  F7 |  F8  |  F9   |  F10 |                   |  4  |  5  |  6  |  +   |   /   |   *   |
-// |       |  F11 | F12 |      |       |      |        |  | trans |  1  |  2  |  3  |  0   |   |\  |   .   |
-//                |     |      |       |      |        |  |       |     |     |     |      |
             bindings = <
 &none     &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(Y)               &none  &none  &none  &none       &none        &none
 &none     &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                  &kp N7 &kp N8 &kp N9 &kp MINUS   &kp EQUAL    &kp RBKT
@@ -77,12 +64,6 @@
 
         raise_layer {
             display-name = "cfg";
-// ------------------------------------------------------------------------------------------------------------
-// |      |      |     |     |     |       |                 |         |     |         |         |         |         |
-// | INS  | DEL  |     |  ^  |     | PSCRN |                 | BTCLR   | BT1 | BT2     |  BT3    | BT4     | BT5     | 
-// | HOME | END  |  <- |  v  | ->  |       |                 | F23     |     | RGB_SAI | RGB_HUI | RGB_BRI | RGB_EFF |
-// | PGUP | PGDN |     |     |     |       |      |  | trans | F24     |     | RGB_SAD | RGB_HUD | RGB_BRD | RGB_TOG |
-//               |     |     |     |       |      |  |       |         |     |         |         |
             bindings = <
 &none     &none     &none    &none    &none     &none                   &none      &none        &none           &none           &none           &none
 &kp INS   &kp DEL   &none    &kp UP   &none     &kp PSCRN               &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4
