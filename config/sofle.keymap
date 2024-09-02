@@ -65,10 +65,10 @@
 // |       |  F11 | F12 |      |       |      |        |  | trans |  1  |  2  |  3  |  0   |   |\  |   .   |
 //                |     |      |       |      |        |  |       |     |     |     |      |
             bindings = <
-&none     &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(Y)              &none     &none    &none     &none        &none        &none
-&none     &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                 &kp N7    &kp N8   &kp N9    &kp MINUS    &kp EQUAL    &kp RBKT
-&kp GRAVE &kp F6    &kp F7    &kp F8    &kp F9    &kp F10                &kp N4    &kp N5   &kp N6    &kp KP_PLUS  &kp KP_SLASH &kp KP_ASTERISK
-&none     &kp F11   &kp F12   &none     &none     &none     &none &trans &kp N1    &kp N2   &kp N3    &kp N0       &kp BSLH     &kp KP_DOT
+&none     &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(Y)               &none  &none  &none  &none       &none        &none
+&none     &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                  &kp N7 &kp N8 &kp N9 &kp MINUS   &kp EQUAL    &kp RBKT
+&kp GRAVE &kp F6    &kp F7    &kp F8    &kp F9    &kp F10                 &kp N4 &kp N5 &kp N6 &kp KP_PLUS &kp KP_SLASH &kp KP_ASTERISK
+&none     &kp F11   &kp F12   &none     &none     &none     &none  &trans &kp N1 &kp N2 &kp N3 &kp N0      &kp BSLH     &kp KP_DOT
                     &trans    &trans    &trans    &trans    &trans &trans &trans &trans &trans &trans
             >;
 
