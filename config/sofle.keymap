@@ -78,11 +78,11 @@
         raise_layer {
             display-name = "cfg";
 // ------------------------------------------------------------------------------------------------------------
-// |      |      |     |     |     |       |                 |         |         |         |         |     |     |
-// | INS  | DEL  |     |  ^  |     | PSCRN |                 | BTCLR   | BT1     | BT2     |  BT3    | BT4 | BT5 | 
-// | HOME | END  |  <- |  v  | ->  |       |                 | RGB_SAI | RGB_HUI | RGB_BRI | RGB_EFF |     |     |
-// | PGUP | PGDN |     |     |     |       |      |  | trans | RGB_SAD | RGB_HUD | RGB_BRD | RGB_TOG |     |     |
-//               |     |     |     |       |      |  |       |         |         |         |         |
+// |      |      |     |     |     |       |                 |         |     |         |         |         |         |
+// | INS  | DEL  |     |  ^  |     | PSCRN |                 | BTCLR   | BT1 | BT2     |  BT3    | BT4     | BT5     | 
+// | HOME | END  |  <- |  v  | ->  |       |                 | F23     |     | RGB_SAI | RGB_HUI | RGB_BRI | RGB_EFF |
+// | PGUP | PGDN |     |     |     |       |      |  | trans | F24     |     | RGB_SAD | RGB_HUD | RGB_BRD | RGB_TOG |
+//               |     |     |     |       |      |  |       |         |     |         |         |
             bindings = <
 &none     &none     &none    &none    &none     &none                  &none           &none           &none           &none           &none        &none
 &kp INS   &kp DEL   &none    &kp UP   &none     &kp PSCRN              &bt BT_CLR      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3 &bt BT_SEL 4
