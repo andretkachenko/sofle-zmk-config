@@ -25,13 +25,6 @@
 #define ADJUST 3
 
 / {
-    behaviors {
-        rot_kp: sensor_rotate_kp {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -39,24 +32,24 @@
         default_layer {
             display-name = "main";
             bindings = <
-&kp ESC   &kp N1 &kp N2   &kp N3    &kp N4    &kp N5                           &kp N6  &kp N7    &kp N8    &kp N9    &kp N0   &none
-&kp ESC   &kp Q  &kp W    &kp E     &kp R     &kp T                            &kp Y   &kp U     &kp I     &kp O     &kp P    &kp LBKT
-&kp TAB   &kp A  &kp S    &kp D     &kp F     &kp G                            &kp H   &kp J     &kp K     &kp L     &kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X    &kp C     &kp V     &kp B      &kp C_MUTE &kp F24    &kp N   &kp M     &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
-                 &kp LGUI &kp LCTRL &kp LALT  &kp SPACE  &mo LOWER  &mo RAISE  &kp RET &kp BSPC  &kp DEL   &kp RCTRL  
+&kp ESC   &kp N1        &kp N2      &kp N3     &kp N4     &kp N5                           &kp N6  &kp N7     &kp N8     &kp N9      &kp N0          &none
+&kp ESC   &kp Q         &kp W       &kp E      &kp R      &kp T                            &kp Y   &kp U      &kp I      &kp O       &kp P           &kp LBKT
+&kp TAB   &mt LSHIFT A  &mt LCTRL S &mt LGUI D &mt LALT F &kp G                            &kp H   &mt RALT J &mt RGUI K &mt RCTRL L &mt RSHIFT SEMI &kp SQT
+&kp LSHFT &kp Z         &kp X       &kp C      &kp V      &kp B      &kp C_MUTE &kp F24    &kp N   &kp M      &kp COMMA  &kp DOT     &kp FSLH        &kp RSHFT
+                        &none       &none      &kp DEL    &kp SPACE  &mo LOWER  &mo RAISE  &kp RET &kp BSPC   &none      &none  
             >;
 
-            sensor-bindings = <&rot_kp UP DOWN &rot_kp RIGHT LEFT >;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT >;
         };
 
         lower_layer {
             display-name = "num";
             bindings = <
-&none     &none   &none    &none     &none     &none                   &none  &none  &none  &none       &none        &none
-&none     &kp F1  &kp F2   &kp F3    &kp F4    &kp F5                  &kp N7 &kp N8 &kp N9 &kp MINUS   &kp EQUAL    &kp RBKT
-&kp GRAVE &kp F6  &kp F7   &kp F8    &kp F9    &kp F10                 &kp N4 &kp N5 &kp N6 &kp KP_PLUS &kp KP_SLASH &kp KP_ASTERISK
-&none     &kp F11 &kp F12  &none     &kp F23   &kp F24   &none  &trans &kp N1 &kp N2 &kp N3 &kp N0      &kp BSLH     &kp KP_DOT
-                  &trans   &trans    &trans    &trans    &trans &trans &trans &trans &trans &trans
+&none     &none          &none         &none       &none       &none                   &none       &none       &none     &none              &none        &none
+&none     &kp F1         &kp F2        &kp F3      &kp F4      &kp F5                  &kp N7      &kp N8      &kp N9    &kp MINUS          &kp EQUAL    &kp RBKT
+&kp GRAVE &mt LSHIFT F6  &mt LCTRL F7  &mt LGUI F8 &mt LALT F9 &kp F10                 &mt RALT N4 &mt RGUI N5 &mt RCTRL &mt RSHIFT KP_PLUS &kp KP_SLASH &kp KP_ASTERISK
+&none     &kp F11        &kp F12       &none       &kp F23     &kp F24   &none  &trans &kp N1      &kp N2      &kp N3    &kp N0             &kp BSLH     &kp KP_DOT
+                         &trans        &trans      &trans      &trans    &trans &trans &trans      &trans      &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
