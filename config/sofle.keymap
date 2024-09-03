@@ -47,7 +47,7 @@
             bindings = <
 &none     &none          &none         &none       &none       &none                   &none       &none       &none     &none              &none        &none
 &none     &kp F1         &kp F2        &kp F3      &kp F4      &kp F5                  &kp N7      &kp N8      &kp N9    &kp MINUS          &kp EQUAL    &kp RBKT
-&kp GRAVE &mt LSHIFT F6  &mt LCTRL F7  &mt LGUI F8 &mt LALT F9 &kp F10                 &mt RALT N4 &mt RGUI N5 &mt RCTRL &mt RSHIFT KP_PLUS &kp KP_SLASH &kp KP_ASTERISK
+&kp GRAVE &mt LSHIFT F6  &mt LCTRL F7  &mt LGUI F8 &mt LALT F9 &kp F10                 &kp N4 &mt RALT N5 &mt RGUI N6 &mt RCTRL KP_PLUS &mt RSHIFT KP_SLASH &kp KP_ASTERISK
 &none     &kp F11        &kp F12       &none       &kp F23     &kp F24   &none  &trans &kp N1      &kp N2      &kp N3    &kp N0             &kp BSLH     &kp KP_DOT
                          &trans        &trans      &trans      &trans    &trans &trans &trans      &trans      &trans    &trans
             >;
