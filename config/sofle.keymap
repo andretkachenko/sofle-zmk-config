@@ -52,7 +52,7 @@
             key-positions = <52 53>;
             bindings = <&to GAME>;
             require-prior-idle-ms = <IDLE_MS>;
-            slow-release = true;
+            slow-release;
         };
     };
 
