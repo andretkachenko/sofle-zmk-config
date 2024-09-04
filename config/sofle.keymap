@@ -52,7 +52,7 @@
         bindings = <&kp V>, <&kp B>;
     };
 
-S    otf: one_to_four {
+    otf: one_to_four {
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
         tapping-term-ms = <TAP_TIME_MS>;
