@@ -55,7 +55,7 @@
     otf: one_to_four {
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <TAP_TIME_MS>;
+        tapping-term-ms = <QUICK_TAP_MS>;
         bindings = <&kp N1>, <&kp N4>;
     };
 
