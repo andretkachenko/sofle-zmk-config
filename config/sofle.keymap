@@ -25,13 +25,13 @@
 #define ADJUST 3
 
 // left-hand keys
-#define KEYS_L 12 13 14 15 16 17 
-               24 25 26 27 28 29  
+#define KEYS_L 12 13 14 15 16 17 \
+               24 25 26 27 28 29 \ 
                36 37 38 39 40 41
 
 // right-hand keys
-#define KEYS_R 18 19 20 21 22 23 
-               30 31 32 33 34 35  
+#define KEYS_R 18 19 20 21 22 23 \
+               30 31 32 33 34 35 \ 
                44 45 46 47 48 49 // index missing 42 and 43 because they are reserved for encoders
 
 // thumb keys
