@@ -115,13 +115,13 @@
             display-name = "cfg";
             bindings = <
 //╭──────────────┬──────────────┬───────────────┬──────────────┬───────────────┬──────────╮                             ╭───────────────┬───────────────┬──────────────────┬───────────────────┬───────────────────┬───────────────╮
-    &none          &none          &none           &none         &none           &none                                    &none           &none           &none              &none               &none               &none
+    &none          &none          &none           &none          &none           &none                                    &none           &none           &none              &none               &none               &none
 //├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp INS        &kp DEL        &none           &kp UP        &none           &kp PSCRN                                &bt BT_CLR      &bt BT_SEL 0    &bt BT_SEL 1       &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4
+    &none          &kp PSCRN      &kp UP          &none          &kp INS         &kp DEL                                 &bt BT_CLR      &bt BT_SEL 0    &bt BT_SEL 1       &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4
 //├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp HOME      &hm  LSHFT END &hm  LCTRL LEFT &hm  LGUI DOWN &hm  LALT RIGHT &none                                    &rgb_ug RGB_EFF &kp RALT        &kp RGUI           &kp RCTRL           &kp RSHFT           &rgb_ug RGB_TOG
+    &none          &kp LEFT       &kp DOWN        &kp RIGHT      &kp HOME        &kp END                                 &rgb_ug RGB_EFF &kp RALT        &kp RGUI           &kp RCTRL           &kp RSHFT           &rgb_ug RGB_TOG
 //├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤ ╭───────────╮  ╭──────────╮ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp PG_UP      &kp PG_DN      &none           &none         &kp F23         &kp F24       &none          &trans      &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_HUD    &rgb_ug RGB_HUI     &rgb_ug RGB_BRD     &rgb_ug RGB_BRI  
+    &none          &none          &kp F23         &kp F24        &kp PG_UP       &kp PG_DN    &none          &trans      &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_HUD    &rgb_ug RGB_HUI     &rgb_ug RGB_BRD     &rgb_ug RGB_BRI  
 //╰──────────────┴──────────────┼───────────────┼──────────────┼───────────────┼──────────┤ ├───────────┤  ├──────────┤ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┴───────────────╯
                                   &trans          &trans        &trans          &trans        &trans         &trans      &trans          &trans          &trans             &trans
 //                              ╰───────────────┴──────────────┴───────────────┴──────────╯ ╰───────────╯  ╰──────────╯ ╰───────────────┴───────────────┴──────────────────┴───────────────────╯
