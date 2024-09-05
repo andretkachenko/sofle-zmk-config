@@ -46,33 +46,33 @@
     
     /* tap dance */
 
-//    qto: q_to_one {
-//        compatible = "zmk,behavior-tap-dance";
-//        #binding-cells = <0>;
-//        tapping-term-ms = <TAP_TIME_MS>;
-//        bindings = <&kp Q, <&kp N1>;
-//    };
-//
-//    ett: e_to_two {
-//        compatible = "zmk,behavior-tap-dance";
-//        #binding-cells = <0>;
-//        tapping-term-ms = <TAP_TIME_MS>;
-//        bindings = <&kp E>, <&kp N2>;
-//    };
-//
-//    rtt: r_to_three {
-//        compatible = "zmk,behavior-tap-dance";
-//        #binding-cells = <0>;
-//        tapping-term-ms = <TAP_TIME_MS>;
-//        bindings = <&kp R>, <&kp N3>;
-//    };
-//
-//    ttf: t_to_four {
-//        compatible = "zmk,behavior-tap-dance";
-//        #binding-cells = <0>;
-//        tapping-term-ms = <TAP_TIME_MS>;
-//        bindings = <&kp T>, <&kp N4>;
-//    };
+    qto: q_to_one {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <TAP_TIME_MS>;
+        bindings = <&kp Q, <&kp N1>;
+    };
+
+    ett: e_to_two {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <TAP_TIME_MS>;
+        bindings = <&kp E>, <&kp N2>;
+    };
+
+    rtt: r_to_three {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <TAP_TIME_MS>;
+        bindings = <&kp R>, <&kp N3>;
+    };
+
+    ttf: t_to_four {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <TAP_TIME_MS>;
+        bindings = <&kp T>, <&kp N4>;
+    };
 
     combos {
         compatible = "zmk,combos";
@@ -151,7 +151,7 @@
 //╭──────────────┬──────────────┬───────────────┬──────────────┬───────────────┬──────────╮                             ╭───────────────┬───────────────┬──────────────────┬───────────────────┬───────────────────┬───────────────╮
     &none          &none          &none           &none          &none           &none                                   &none           &none           &none              &none               &none               &none
 //├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp ESC        &kp Q           &kp W           &kp E           &kp R            &kp T                                    &none           &none           &none              &none               &none               &none
+    &kp ESC        &qto           &kp W           &ett           &rtt            &ttf                                    &none           &none           &none              &none               &none               &none
 //├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
     &kp TAB        &kp A          &kp S           &kp D          &kp F           &kp G                                   &none           &none           &none              &none               &none               &kp F23
 //├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤ ╭───────────╮  ╭──────────╮ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
