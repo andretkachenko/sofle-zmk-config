@@ -10,7 +10,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h>
 
 &led_strip {
     chain-length = <35>;
@@ -30,12 +29,6 @@
 #define QUICK_TAP_MS 175                              
 #define IDLE_MS 150
 
-// mouse movement aliases
-#define MS_U &mmv MOVE_UP
-#define MS_D &mmv MOVE_DOWN
-#define MS_L &mmv MOVE_LEFT
-#define MS_R &mmv MOVE_RIGHT
-
 / {
     behaviors {   
         /* home row mod */    
@@ -51,12 +44,13 @@
         };
     };
     
-    /* Tap Dance */
+    /* tap dance */
+
     qto: q_to_one {
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
         tapping-term-ms = <TAP_TIME_MS>;
-        bindings = <&kp Q, <&kp N1>;
+        bindings = <&kp Q>, <&kp N1>;
     };
 
     ett: e_to_two {
@@ -80,7 +74,6 @@
         bindings = <&kp T>, <&kp N4>;
     };
 
-    /* Combos */
     combos {
         compatible = "zmk,combos";
         game_mode {
@@ -92,22 +85,6 @@
         };
     };
 
-    /* Mouse emulation */
-    /* Course configuration */
-    &mmv {
-        acceleration-exponent = <1>;      // 1
-        time-to-max-speed-ms = <500>;    // 40
-        delay-ms = <0>;                   // 0
-    };
-
-    /* Scroll wheel configuration */
-    &msc {
-        acceleration-exponent = <1>;      // 0
-        time-to-max-speed-ms = <40>;      // 500
-        delay-ms = <0>;                   // 10
-    };
-
-    /* Layers */
     keymap {
         compatible = "zmk,keymap";
 
@@ -159,7 +136,7 @@
 //├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
     &none          &kp LEFT       &kp DOWN        &kp RIGHT      &kp HOME        &kp END                                 &rgb_ug RGB_EFF &kp RALT        &kp RGUI           &kp RCTRL           &kp RSHFT           &rgb_ug RGB_TOG
 //├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤ ╭───────────╮  ╭──────────╮ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    MS_L           MS_U           MS_D            MS_R           &kp PG_UP       &kp PG_DN    &none          &trans      &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_HUD    &rgb_ug RGB_HUI     &rgb_ug RGB_BRD     &rgb_ug RGB_BRI  
+    &none          &none          &kp F23         &kp F24        &kp PG_UP       &kp PG_DN    &none          &trans      &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_HUD    &rgb_ug RGB_HUI     &rgb_ug RGB_BRD     &rgb_ug RGB_BRI  
 //╰──────────────┴──────────────┼───────────────┼──────────────┼───────────────┼──────────┤ ├───────────┤  ├──────────┤ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┴───────────────╯
                                   &trans          &trans        &trans          &trans        &trans         &trans      &trans          &trans          &trans             &trans
 //                              ╰───────────────┴──────────────┴───────────────┴──────────╯ ╰───────────╯  ╰──────────╯ ╰───────────────┴───────────────┴──────────────────┴───────────────────╯
@@ -172,7 +149,7 @@
             display-name = "game";
             bindings = <
 //╭──────────────┬──────────────┬───────────────┬──────────────┬───────────────┬──────────╮                             ╭───────────────┬───────────────┬──────────────────┬───────────────────┬───────────────────┬───────────────╮
-    &none          &none          &none           &none          &none           &none                                   sx&none           &none           &none              &none               &none               &none
+    &none          &none          &none           &none          &none           &none                                   &none           &none           &none              &none               &none               &none
 //├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
     &kp ESC        &qto           &kp W           &ett           &rtt            &ttf                                    &none           &none           &none              &none               &none               &none
 //├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
