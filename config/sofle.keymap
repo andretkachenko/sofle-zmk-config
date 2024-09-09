@@ -36,7 +36,6 @@
 #define QUICK_TAP_MS 175                              
 #define IDLE_MS 150
 
-
 // left-hand keys
 // leftmost column (0, 12, 24, 36) skipped as they are used for modificators (esc, tab, shift)
 #define KEYS_L 1  2  3  4  5 \
@@ -47,7 +46,7 @@
 // right-hand keys
 #define KEYS_R 6  7  8  9  10 11 \
                18 19 20 21 22 23 \
-               30 31 32 33 34 35 \ 
+               30 31 32 33 34 35 \
                44 45 46 47 48 49 // indexes 42 and 43 missing because they are reserved for encoders
 
 // thumb keys
@@ -170,7 +169,7 @@
 //├──────────────┼──────────────┼─────────────┼─────────────┼─────────────┼──────────┤                             ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┼───────────────┤
     &trans         &kp F1         &kp F2        &kp F3        &kp F4        &kp F5                                   &kp N7        &kp N8        &kp N9        &kp MINUS         &kp EQUAL            &kp RBKT
 //├──────────────┼──────────────┼─────────────┼─────────────┼─────────────┼──────────┤                             ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┼───────────────┤
-    &tans          &hml LSHFT F6  &fsave        &hml LGUI F8  &hml LALT F9  &kp F10                                  &kp N4        &hmr RALT N5  &hmr RGUI N6 &hmr RCTRL KP_PLUS &hmr RSHFT KP_SLASH &kp KP_ASTERISK
+    &trans          &hml LSHFT F6  &fsave        &hml LGUI F8  &hml LALT F9  &kp F10                                  &kp N4        &hmr RALT N5  &hmr RGUI N6 &hmr RCTRL KP_PLUS &hmr RSHFT KP_SLASH &kp KP_ASTERISK
 //├──────────────┼──────────────┼─────────────┼─────────────┼─────────────┼──────────┤ ╭───────────╮  ╭──────────╮ ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┼───────────────┤
     &kp RET        &fundo         &fcut         &kp LC(C)     &fpaste       &fredo       &none          &trans       &kp N1        &kp N2        &kp N3         &kp N0             &kp BSLH           &kp KP_DOT
 //╰──────────────┴──────────────┼─────────────┼─────────────┼─────────────┼──────────┤ ├───────────┤  ├──────────┤ ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┴───────────────╯
