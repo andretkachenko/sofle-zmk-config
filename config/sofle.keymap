@@ -19,6 +19,11 @@
     resolution = <2>;
 };
 
+&sk {  // sticky-key config
+    release-after-ms = <900>;  // release after 0.9s
+    quick-release;             // no double capitalization when rolling keys
+};
+
 #define BASE 0
 #define LOWER 1
 #define RAISE 2
