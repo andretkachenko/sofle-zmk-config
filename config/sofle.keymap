@@ -74,6 +74,43 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release; // delay positional check until key-release
         };
+
+        /* mod morph */
+        
+        fsave: fn_save { // tap: F7 | shift + tap: save
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp F7>, <&kp LC(S)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        fundo: fn_undo { // tap: F11 | shift + tap: undo
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp F11>, <&kp LC(Z)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };       
+        
+        fcut: fn_cut { // tap: F12 | shift + tap: cut
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp F12>, <&kp LC(X)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };       
+        
+        fpaste: fn_paste { // tap: F23 | shift + tap: paste
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp F23>, <&kp LC(V)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        fredo: fn_redo { // tap: F24 | shift + tap: redo
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp F24>, <&kp LC(Y)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     /* combos */
@@ -125,13 +162,13 @@
 //╭──────────────┬──────────────┬─────────────┬─────────────┬─────────────┬──────────╮                             ╭─────────────┬─────────────┬─────────────┬──────────────────┬───────────────────┬───────────────╮
     &none          &none          &none         &none         &none         &none                                    &none         &none         &none         &none             &none                &none
 //├──────────────┼──────────────┼─────────────┼─────────────┼─────────────┼──────────┤                             ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┼───────────────┤
-    &none          &kp F1         &kp F2        &kp F3        &kp F4        &kp F5                                   &kp N7        &kp N8        &kp N9        &kp MINUS         &kp EQUAL            &kp RBKT
+    &trans         &kp F1         &kp F2        &kp F3        &kp F4        &kp F5                                   &kp N7        &kp N8        &kp N9        &kp MINUS         &kp EQUAL            &kp RBKT
 //├──────────────┼──────────────┼─────────────┼─────────────┼─────────────┼──────────┤                             ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┼───────────────┤
-    &kp GRAVE      &hml LSHFT F6 &hml LCTRL F7  &hml LGUI F8  &hml LALT F9  &kp F10                                  &kp N4        &hmr RALT N5  &hmr RGUI N6 &hmr RCTRL KP_PLUS &hmr RSHFT KP_SLASH &kp KP_ASTERISK
+    &tans          &hml LSHFT F6  &fsave        &hml LGUI F8  &hml LALT F9  &kp F10                                  &kp N4        &hmr RALT N5  &hmr RGUI N6 &hmr RCTRL KP_PLUS &hmr RSHFT KP_SLASH &kp KP_ASTERISK
 //├──────────────┼──────────────┼─────────────┼─────────────┼─────────────┼──────────┤ ╭───────────╮  ╭──────────╮ ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┼───────────────┤
-    &kp RET        &kp F11        &kp F12       &kp LC(S)     &kp F23       &kp F24      &none          &trans       &kp N1        &kp N2        &kp N3         &kp N0             &kp BSLH           &kp KP_DOT
+    &kp RET        &fundo         &fcut         &kp LC(C)     &fpaste       &fredo       &none          &trans       &kp N1        &kp N2        &kp N3         &kp N0             &kp BSLH           &kp KP_DOT
 //╰──────────────┴──────────────┼─────────────┼─────────────┼─────────────┼──────────┤ ├───────────┤  ├──────────┤ ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┴───────────────╯
-                                  &trans        &trans        &trans        &trans       &mo BASE         &trans       &trans        &trans        &trans         &trans
+                                  &trans        &trans        &trans        &trans       &mo BASE       &trans       &trans        &trans        &trans         &trans
 //                              ╰─────────────┴─────────────┴─────────────┴──────────╯ ╰───────────╯  ╰──────────╯ ╰─────────────┴─────────────┴─────────────┴──────────────────╯
             >;
 
