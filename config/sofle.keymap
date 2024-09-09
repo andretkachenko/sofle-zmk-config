@@ -117,7 +117,7 @@
 
     combos {
         compatible = "zmk,combos";
-        game_mode {
+        game_mode { // lower + raise: game layer
             timeout-ms = <50>;
             key-positions = <53 56>;
             bindings = <&to GAME1>;
@@ -125,10 +125,10 @@
             slow-release;
         };
 
-        cfg_mode {
+        cfg_mode { // space + enter -> cfg layer
             timeout-ms = <50>;
             key-positions = <54 55>;
-            bindings = <&to GAME1>;
+            bindings = <&to CFG>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
