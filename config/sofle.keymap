@@ -106,7 +106,7 @@
             tapping-term-ms = <TAP_TIME_MS>;
             quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
             require-prior-idle-ms = <IDLE_MS>;
-            bindings = <&mo>, <&erase>;
+            bindings = <&mo>, <&rem>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release; // delay positional check until key-release
         };
