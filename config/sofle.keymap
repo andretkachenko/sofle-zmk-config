@@ -21,7 +21,7 @@
 #define UNI  6
 
 // timings
-#define TAP_TIME_MS 200   
+#define TAP_TIME_MS 250   
 #define QUICK_TAP_MS 175                              
 #define IDLE_MS 150
 
@@ -187,7 +187,7 @@
             display-name = "sym";
             bindings = <
 &none          &none          &none         &none         &none           &none                                      &none         &none         &none         &none         &none             &none
-&none          &none          &none         &kp QMARK     &kp LPAR        &kp RPARC                                  &none         &none         &none         &none         &none             &none
+&none          &none          &none         &kp QMARK     &kp LPAR        &kp RPAR                                   &none         &none         &none         &none         &none             &none
 &none          &none          &none         &kp COLON     &kp LBRC        &kp RBR                                    &none         &kp RSHFT     &kp RCTRL     &kp RALT      &kp RGUI          &none
 &none          &none          &none         &kp MINUS     &kp LBKT        &kp RBKT        &none          &none       &none         &none         &none         &none         &none             &none 
                               &none         &none         &gresc          &kp SPACE       &kp TAB        &none       &none         &none         &none         &none
@@ -214,7 +214,7 @@
             bindings = <
 &none          &none          &none         &none         &none           &none                                      &none           &none           &none         &none           &none             &none
 &none          &bt BT_CLR     &none         &none         &none           &none                                      &rgb_ug RGB_SAD &rgb_ug RGB_SAI &none         &none           &none             &none
-&none          &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4                               &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none         &rgb_ug RGB_EFF &rgb_ug RGB_TOG    &none
+&none          &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4                               &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none         &rgb_ug RGB_EFF &rgb_ug RGB_TOG   &none
 &none          &none          &none         &none         &none           &none         &none          &none         &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none         &none           &none             &none 
                               &none         &none         &none           &none         &none          &to BASE      &none           &none           &none         &none
             >;
