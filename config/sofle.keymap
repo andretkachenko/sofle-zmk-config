@@ -139,6 +139,22 @@
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
+
+        fn_mode { // space + enter -> cfg layer
+            timeout-ms = <50>;
+            key-positions = <53 54>;
+            bindings = <&mo FN>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        };
+
+        nav_mode { // space + enter -> cfg layer
+            timeout-ms = <50>;
+            key-positions = <55 56>;
+            bindings = <&mo NAV>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        };
     };
 
     keymap {
@@ -151,10 +167,10 @@
 &none          &kp Q          &kp W         &kp E         &kp R           &kp T                                      &kp Y         &kp U         &kp I         &kp O         &kp P             &none
 &none          &hml LGUI A    &hml LALT S   &hml LCTRL D  &hml LSHFT F    &kp G                                      &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L   &hmr RGUI SEMI    &none
 &none          &kp Z          &kp X         &kp C         &kp V           &kp B         &none          &none         &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH          &none 
-                              &none         &none         &ngesc FN 0     &kp SPACE     &lt NUM TAB    &ltrem NAV 0  &lt SYM RET   &key_repeat   &none         &none  
+                              &none         &none         &none           &kp SPACE     &lt SYM TAB    &ltrem NUM 0  &key_repeat   &none         &none         &none
             >;
 
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT >;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT >
         };
 
         nav {
@@ -164,7 +180,7 @@
 &none          &kp PG_DN      &kp HOME      &kp UP        &kp END         &kp PG_UP                                  &none         &none         &none         &none         &none             &none
 &none          &caps_word     &kp LEFT      &kp DOWN      &kp RIGHT       &kp INS                                    &none         &kp RSHFT     &kp RCTRL     &kp RALT      &kp RGUI          &none
 &none          &kp LC(Z)      &kp LC(X)     &kp LC(C)     &kp LC(V)       &kp LC(Y)     &none          &none         &none         &none         &none         &none         &none             &none 
-                              &none         &none         &none           &none         &none          &none         &none         &none         &none         &none  
+                              &none         &none         &none           &kp RET       &gresc         &none         &none         &none         &none         &none  
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -173,11 +189,11 @@
         num {
             display-name = "num";
             bindings = <
-&none          &none          &none         &none         &none           &none                                      &none         &none         &none         &none         &none             &none
-&none          &none          &none         &none         &none           &none                                      &kp LBKT      &kp N7        &kp N8        &kp N9        &kp RBKT          &none
-&none          &kp LGUI       &kp LALT      &kp LCTRL     &kp RSHIFT      &none                                      &kp SQT       &kp N4        &kp N5        &kp N6        &kp EQUAL         &none
-&none          &none          &none         &none         &none           &none         &none          &none         &kp GRAVE     &kp N1        &kp N2        &kp N3        &kp BSLH          &none 
-                              &none         &none         &none           &kp RET       &none          &kp MINUS     &kp N0        &kp DOT       &none         &none
+&none          &none           &none         &none         &none           &none                                      &none         &none         &none         &none         &none             &none
+&none          &kp FSLH        &kp N7        &kp N8        &kp N9          &kp MINUS                                  &none         &none         &none         &none         &none             &none
+&none          &kp KP_ASTERISK &kp N4        &kp N5        &kp N6          &kp PLUS                                   &none         &kp RSHFT     &kp RCTRL     &kp RALT      &kp RGUI          &none
+&none          &kp EQUAL       &kp N1        &kp N2        &kp N3          &kp N0       &none          &none          &none         &none         &none         &none         &none             &none 
+                               &none         &none         &none           &kp RET      &kp DOT        &none          &none        &none          &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -187,10 +203,10 @@
             display-name = "sym";
             bindings = <
 &none          &none          &none         &none         &none           &none                                      &none         &none         &none         &none         &none             &none
-&none          &none          &none         &kp QMARK     &kp LPAR        &kp RPAR                                   &none         &none         &none         &none         &none             &none
-&none          &none          &none         &kp COLON     &kp LBRC        &kp RBRC                                   &none         &kp RSHFT     &kp RCTRL     &kp RALT      &kp RGUI          &none
-&none          &none          &none         &kp MINUS     &kp LBKT        &kp RBKT        &none          &none       &none         &none         &none         &none         &none             &none 
-                              &none         &none         &gresc          &kp SPACE       &kp TAB        &none       &none         &none         &none         &none
+&none          &none          &none         &none         &none           &none                                      &kp LBKT      &kp RBKT      &kp GRAVE     &none         &none             &none
+&none          &kp LGUI       &kp LALT      &kp LCTRL     &kp LSHFT       &none                                      &kp SQT       &kp RSHFT     &kp LPAR      &kp RPAR      &none             &none
+&none          &none          &none         &none         &none           &none           &none          &none       &kp DOT       &kp FSLH      &kp BSLH      &none         &none             &none 
+                              &none         &none         &none           &kp RET         &none          &rem        &kp RET       &key_repeat   &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -229,7 +245,7 @@
 &kp GRAVE      &kp Q          &kp W         &kp E         &kp R           &kp T                                      &kp Y         &kp U         &kp I         &kp O         &kp P             &kp LBKT
 &kp TAB        &kp A          &kp S         &kp D         &kp F           &kp G                                      &kp H         &kp J         &kp K         &kp L         &kp COLON         &kp SQT
 &kp LSHFT      &kp Z          &kp X         &kp C         &kp V           &kp B         &to BASE       &kp F24       &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH          &kp RSHFT 
-                              &kp LCTRL     &kp LGUI      &kp  LALT       &kp SPACE     &kp F23        &kp BSLH      &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT
+                              &kp LGUI      &kp LCTRL     &kp  LALT       &kp SPACE     &kp BSLH       &kp RET       &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
