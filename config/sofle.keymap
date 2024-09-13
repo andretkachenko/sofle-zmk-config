@@ -124,7 +124,7 @@
 
     combos {
         compatible = "zmk,combos";
-        game_mode { // lower + raise -> game layer
+        game_mode { // space + key repeat -> game layer
             timeout-ms = <50>;
             key-positions = <53 56>;
             bindings = <&to UNI>;
@@ -132,7 +132,7 @@
             slow-release;
         };
 
-        cfg_mode { // space + enter -> cfg layer
+        cfg_mode { // tab + backspace -> cfg layer
             timeout-ms = <50>;
             key-positions = <54 55>;
             bindings = <&to CFG>;
@@ -140,7 +140,7 @@
             slow-release;
         };
 
-        fn_mode { // space + enter -> cfg layer
+        fn_mode { // space + tab -> fn layer
             timeout-ms = <50>;
             key-positions = <53 54>;
             bindings = <&mo FN>;
@@ -148,7 +148,7 @@
             slow-release;
         };
 
-        nav_mode { // space + enter -> cfg layer
+        nav_mode { // backspace + key repeat -> nav layer
             timeout-ms = <50>;
             key-positions = <55 56>;
             bindings = <&mo NAV>;
@@ -170,7 +170,7 @@
                               &none         &none         &none           &kp SPACE     &lt SYM TAB    &ltrem NUM 0  &key_repeat   &none         &none         &none
             >;
 
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT >
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT >;
         };
 
         nav {
