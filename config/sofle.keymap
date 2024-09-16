@@ -11,25 +11,14 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
 
-&led_strip {
-    chain-length = <35>;
-};
-
-&left_encoder {
-    resolution = <2>;
-};
-
-&sk {  // sticky-key config
-    release-after-ms = <900>;  // release after 0.9s
-    quick-release;             // no double capitalization when rolling keys
-};
-
+// layers
 #define BASE 0
-#define LOWER 1
-#define RAISE 2
-#define GAME1 3
-#define GAME2 4
-#define CFG 5
+#define NAV  1
+#define NUM  2
+#define SYM  3
+#define FN   4
+#define CFG  5
+#define UNI  6
 
 // timings
 #define TAP_TIME_MS 250   
@@ -51,6 +40,19 @@
 
 // thumb keys
 #define THUMBS 50 51 52 53 54 55 56 57 58 59
+
+&led_strip {
+    chain-length = <35>;
+};
+
+&left_encoder {
+    resolution = <2>;
+};
+
+&sk {  // sticky-key config
+    release-after-ms = <900>;  // release after 0.9s
+    quick-release;             // no double capitalization when rolling keys
+};
 
 / {
     behaviors {
@@ -79,37 +81,21 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release; // delay positional check until key-release
         };
-
-        /* mod morphs */
-        
-        fsave: fn_save { // tap: F7 | shift + tap: save (with full hrm, ctrl is on the same button as s, so we can't use default command shortcut)
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&hml LCTRL F7>, <&kp LC(S)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        
-        fredo: fn_redo { // tap: F24 | ctrl + tap: redo
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp F24>, <&kp LC(Y)>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
     };
 
     /* combos */
 
     combos {
         compatible = "zmk,combos";
-        game_mode { // lower + raise -> game layer
+        game_mode { // space + enter -> uni layer
             timeout-ms = <50>;
             key-positions = <53 56>;
-            bindings = <&to GAME1>;
+            bindings = <&to UNI>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
 
-        cfg_mode { // space + enter -> cfg layer
+        cfg_mode { // SYM + NUM -> cfg layer
             timeout-ms = <50>;
             key-positions = <54 55>;
             bindings = <&to CFG>;
@@ -124,112 +110,89 @@
         default_layer {
             display-name = "main";
             bindings = <
-//╭──────────────┬──────────────┬─────────────┬─────────────┬───────────────┬──────────╮                             ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────────┬───────────╮
-    &kp ESC        &kp N1         &kp N2        &kp N3        &kp N4         &kp N5                                    &kp N6       &kp N7         &kp N8        &kp N9        &kp N0            &none
-//├──────────────┼──────────────┼─────────────┼─────────────┼───────────────┼──────────┤                             ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────────┼───────────┤
-    &gresc         &kp Q          &kp W         &kp E         &kp R          &kp T                                     &kp Y        &kp U          &kp I         &kp O         &kp P             &kp LBKT
-//├──────────────┼──────────────┼─────────────┼─────────────┼───────────────┼──────────┤                             ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────────┼───────────┤
-    &kp TAB        &hml LGUI A    &hml LALT S   &hml LCTRL D  &hml LSHFT F   &kp G                                     &kp H        &hmr RSHFT J   &hmr RCTRL K  &hmr RALT L   &hmr RGUI SEMI   &kp SQT
-//├──────────────┼──────────────┼─────────────┼─────────────┼───────────────┼──────────┤ ╭───────────╮  ╭──────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────────┼───────────┤
-    &sk LSHFT      &kp Z          &kp X         &kp C         &kp V          &kp B        &kp C_MUTE     &kp F24       &kp N        &kp M          &kp COMMA     &kp DOT       &kp FSLH          &sk RSHFT 
-//╰──────────────┴──────────────┼─────────────┼─────────────┼───────────────┼──────────┤ ├───────────┤  ├──────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────────┴───────────╯
-                                  &none         &none         &kp DEL        &kp SPACE    &mo LOWER      &mo RAISE     &kp RET      &kp BSPC       &none         &none  
-//                              ╰─────────────┴─────────────┴───────────────┴──────────╯ ╰───────────╯  ╰──────────╯ ╰─────────────┴─────────────┴─────────────┴─────────────╯
+&gresc         &kp N1         &kp N2        &kp N3        &kp N4         &kp N5                                         &kp N6       &kp N7         &kp N8        &kp N9        &kp N0            &none
+&kp ESC        &kp Q          &kp W         &kp E         &kp R          &kp T                                          &kp Y        &kp U          &kp I         &kp O         &kp P             &kp BSPC
+&kp TAB        &hml LGUI A    &hml LALT S   &hml LCTRL D  &hml LSHFT F   &kp G                                          &kp H        &hmr RSHFT J   &hmr RCTRL K  &hmr RALT L   &hmr RGUI SEMI    &kp DEL
+&sk LSHFT      &kp Z          &kp X         &kp C         &kp V          &kp B             &none          &none         &kp N        &kp M          &kp COMMA     &kp DOT       &kp FSLH          &sk RSHFT 
+                              &none         &none         &mo FN         &kp SPACE         &mo SYM        &mo NUM       &kp RET      &mo NAV        &none         &none  
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT >;
         };
 
-        lower_layer {
-            display-name = "lower";
+        nav {
+            display-name = "nav";
             bindings = <
-//╭──────────────┬──────────────┬─────────────┬─────────────┬─────────────┬──────────╮                             ╭─────────────┬─────────────┬─────────────┬──────────────────┬───────────────────┬───────────────╮
-    &none          &none          &none         &none         &none         &none                                    &none         &none         &none         &none             &none                &none
-//├──────────────┼──────────────┼─────────────┼─────────────┼─────────────┼──────────┤                             ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┼───────────────┤
-    &trans         &kp F1         &kp F2        &kp F3        &kp F4        &kp F5                                   &kp N7        &kp N8        &kp N9        &kp MINUS         &kp EQUAL            &kp RBKT
-//├──────────────┼──────────────┼─────────────┼─────────────┼─────────────┼──────────┤                             ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┼───────────────┤
-    &trans         &hml LGUI F6   &fsave        &hml LCTRL F8 &hml LSHFT F9 &kp F10                                  &kp N4        &hmr RSHFT N5 &hmr RCTRL N6 &hmr RALT KP_PLUS &hmr RGUI KP_SLASH &kp KP_ASTERISK
-//├──────────────┼──────────────┼─────────────┼─────────────┼─────────────┼──────────┤ ╭───────────╮  ╭──────────╮ ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┼───────────────┤
-    &kp RET        &kp F11        &kp F12       &kp LC(C)     &kp F22       &fredo       &none          &trans       &kp N1        &kp N2        &kp N3         &kp N0             &kp BSLH           &kp KP_DOT
-//╰──────────────┴──────────────┼─────────────┼─────────────┼─────────────┼──────────┤ ├───────────┤  ├──────────┤ ├─────────────┼─────────────┼─────────────┼──────────────────┼───────────────────┴───────────────╯
-                                  &trans        &trans        &trans        &trans       &mo BASE       &trans       &trans        &trans        &trans         &trans
-//                              ╰─────────────┴─────────────┴─────────────┴──────────╯ ╰───────────╯  ╰──────────╯ ╰─────────────┴─────────────┴─────────────┴──────────────────╯
+&none          &none          &none           &none          &none           &none                                      &none         &none         &none         &none         &none             &none
+&trans         &kp PG_DN      &kp HOME        &kp UP         &kp END         &kp PG_UP                                  &none         &none         &none         &none         &none             &trans
+&trans         &kp DEL        &kp LEFT        &kp DOWN       &kp RIGHT       &kp INS                                    &none         &kp RSHFT     &kp RCTRL     &kp RALT      &kp RGUI          &trans
+&trans         &kp PSCRN      &kp PAUSE_BREAK &kp key_repeat &caps_word      &kp LC(Y)     &none          &none         &none         &none         &none         &none         &none             &trans
+                              &none           &none          &trans          &trans        &trans         &trans        &trans        &trans        &none         &none  
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        raise_layer {
-            display-name = "raise";
+        num {
+            display-name = "num";
             bindings = <
-//╭──────────────┬──────────────┬───────────────┬──────────────┬───────────────┬──────────╮                             ╭───────────────┬───────────────┬──────────────────┬───────────────────┬───────────────────┬───────────────╮
-    &none          &none          &none           &none          &none           &none                                   &none           &none           &none              &none               &none               &none
-//├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp INS         &kp DEL       &none           &kp UP         &none           &kp GRAVE                               &none           &none           &none              &none               &none               &none
-//├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp HOME        &kp END       &kp LEFT        &kp DOWN       &kp RIGHT       &kp PSCRN                               &none           &kp RSHFT       &kp RCTRL          &kp RALT            &kp RGUI            &none
-//├──────────────┼──────────────┼──────────────┼──────────────┼───────────────┼───────────┤ ╭───────────╮  ╭──────────╮ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp PG_UP       &kp PG_DN     &none           &none          &kp F23         &kp F24     &none          &trans       &none           &none           &none              &none               &none               &none  
-//╰──────────────┴──────────────┼───────────────┼──────────────┼───────────────┼──────────┤ ├───────────┤  ├──────────┤ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┴───────────────╯
-                                  &trans          &trans         &trans          &trans      &trans         &trans       &trans          &trans          &trans             &trans
-//                              ╰───────────────┴──────────────┴───────────────┴──────────╯ ╰───────────╯  ╰──────────╯ ╰───────────────┴───────────────┴──────────────────┴───────────────────╯
+&none          &none           &none         &none         &none           &none                                         &none         &none         &none         &none        &none             &none
+&trans         &kp FSLH        &kp N7        &kp N8        &kp N9          &kp MINUS                                     &none         &none         &none         &none        &none             &trans
+&trans         &kp KP_ASTERISK &kp N4        &kp N5        &kp N6          &kp PLUS                                      &none         &kp RSHFT     &kp RCTRL     &kp RALT     &kp RGUI          &trans
+&trans         &kp EQUAL       &kp N1        &kp N2        &kp N3          &kp N0          &none          &none          &none         &none         &none         &none        &none             &trans 
+                               &none         &none         &trans          &trans          &trans         &trans         &trans        &trans        &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        game_main_layer {
-            display-name = "FIGHT";
+        sym {
+            display-name = "sym";
             bindings = <
-//╭──────────────┬──────────────┬───────────────┬──────────────┬───────────────┬──────────╮                             ╭───────────────┬───────────────┬──────────────────┬───────────────────┬───────────────────┬───────────────╮
-    &none          &none          &none           &none          &none           &none                                   &none           &none           &none              &none               &none               &none
-//├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp N1         &kp Q          &kp W           &kp E          &kp R           &kp T                                   &none           &kp UP          &none              &none               &none              &none
-//├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp LSHFT      &kp A          &kp S           &kp D          &kp F           &kp G                                   &kp LEFT        &kp DOWN        &kp RIGHT          &none               &none               &kp F23
-//├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤ ╭───────────╮  ╭──────────╮ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp LALT       &kp Z          &kp X           &kp C          &kp V           &kp N2       &none          &trans      &none           &none           &none              &none               &none              &kp F24  
-//╰──────────────┴──────────────┼───────────────┼──────────────┼───────────────┼──────────┤ ├───────────┤  ├──────────┤ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┴───────────────╯
-                                  &trans          &trans         &kp LCTRL       &kp SPACE    &mo GAME2      &to BASE    &trans          &trans          &trans             &trans
-//                              ╰───────────────┴──────────────┴───────────────┴──────────╯ ╰───────────╯  ╰──────────╯ ╰───────────────┴───────────────┴──────────────────┴───────────────────╯
+&none          &none          &none         &none         &none           &none                                         &none         &none         &none         &none         &none             &none
+&trans         &none          &none         &none         &none           &none                                         &kp LBKT      &kp RBKT      &kp MINUS     &kp EQUAL     &none             &trans
+&trans         &kp LGUI       &kp LALT      &kp LCTRL     &kp LSHFT       &kp ENTER                                     &kp SQT       &kp RSHFT     &kp LPAR      &kp RPAR      &none             &trans
+&trans         &none          &none         &none         &none           &none            &none          &none         &kp FSLH      &kp BSLH      &kp GRAVE     &none         &none             &trans
+                              &none         &none         &trans          &trans           &trans         &trans        &trans        &trans        &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        game_sub_layer {
-            display-name = "PREPARE";
+        fn {
+            display-name = "fn";
             bindings = <
-//╭──────────────┬──────────────┬───────────────┬──────────────┬───────────────┬──────────╮                             ╭───────────────┬───────────────┬──────────────────┬───────────────────┬───────────────────┬───────────────╮
-    &none          &none          &none           &none          &none           &none                                   &none           &none           &none              &none               &none               &none
-//├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp ESC        &kp Y          &trans          &kp U          &kp I           &kp O                                    &none           &trans         &none              &none               &none               &none
-//├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &kp TAB        &trans         &trans          &trans          &kp H           &kp J                                   &trans          &trans         &trans             &none               &none               &trans
-//├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼──────────┤ ╭───────────╮  ╭──────────╮ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &trans         &kp N          &kp M           &kp COMMA      &kp DOT         &kp B         &none          &trans      &none           &none          &none              &none               &none               &trans  
-//╰──────────────┴──────────────┼───────────────┼──────────────┼───────────────┼──────────┤ ├───────────┤  ├──────────┤ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┴───────────────╯
-                                 &trans          &trans          &kp LCTRL       &kp SPACE    &trans         &to BASE      &trans          &trans        &trans             &trans
-//                              ╰───────────────┴──────────────┴───────────────┴──────────╯ ╰───────────╯  ╰──────────╯ ╰───────────────┴───────────────┴──────────────────┴───────────────────╯
+&none          &none          &none         &none         &none           &none                                         &none         &none           &none         &none       &none             &none
+&trans         &kp F1         &kp F2        &kp F3        &kp F4          &kp F5                                        &none         &none           &none         &none       &none             &trans
+&trans         &kp F6         &kp F7        &kp F8        &kp F9          &kp F10                                       &none         &kp RSHFT       &kp RCTRL     &kp RALT    &kp RGUI          &trans
+&trans         &kp F11        &kp F12       &kp F22       &kp F23         &kp F24          &none          &none         &none         &kp C_PREV      &kp C_PP      &kp C_NEXT  &none             &trans
+                              &none         &none         &trans          &trans           &trans         &trans        &trans        &trans          &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        keyboard_configuration_layer {
+        cfg {
             display-name = "cfg";
             bindings = <
-//╭──────────────┬──────────────┬───────────────┬──────────────┬───────────────┬────────────╮                             ╭───────────────┬───────────────┬──────────────────┬───────────────────┬───────────────────┬───────────────╮
-    &none          &none          &none           &none          &none           &none                                     &none           &none           &none              &none               &none               &none
-//├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼────────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &none         &bt BT_CLR       &none           &kp UP         &none           &none                                    &rgb_ug RGB_SAD &rgb_ug RGB_SAI   &none              &none               &none               &none
-//├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼────────────┤                             ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &none         &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3   &bt BT_SEL 4                               &rgb_ug RGB_HUD &rgb_ug RGB_HUI  &none              &rgb_ug RGB_EFF     &rgb_ug RGB_TOG      &none
-//├──────────────┼──────────────┼───────────────┼──────────────┼───────────────┼────────────┤ ╭───────────╮  ╭──────────╮ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┼───────────────┤
-    &none         &none          &none           &none          &none           &none          &none          &none        &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none               &none               &none                &none  
-//╰──────────────┴──────────────┼───────────────┼──────────────┼───────────────┼────────────┤ ├───────────┤  ├──────────┤ ├───────────────┼───────────────┼──────────────────┼───────────────────┼───────────────────┴───────────────╯
-                                 &none           &none          &none           &none          &to BASE       &none       &none          &none          &none             &none
-//                              ╰───────────────┴──────────────┴───────────────┴────────────╯ ╰───────────╯  ╰──────────╯ ╰───────────────┴───────────────┴──────────────────┴───────────────────╯
+&none          &none          &none         &none         &none           &none                                         &none           &none           &none         &none           &none             &none
+&none          &bt BT_CLR     &none         &none         &none           &none                                         &rgb_ug RGB_SAD &rgb_ug RGB_SAI &none         &none           &none             &none
+&none          &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4                                  &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none         &rgb_ug RGB_EFF &rgb_ug RGB_TOG   &none
+&none          &none          &none         &none         &none           &none            &none          &none         &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none         &none           &none             &none 
+                              &none         &none         &none           &none            &none          &to BASE      &none           &none           &none         &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        uni {
+            display-name = "uni";
+            bindings = <
+&kp ESC        &kp N1         &kp N2        &kp N3        &kp N4          &kp N5                                     &kp N6        &kp N7        &kp N8        &kp N9        &kp N0            &kp BSPC
+&kp GRAVE      &kp Q          &kp W         &kp E         &kp R           &kp T                                      &kp Y         &kp U         &kp I         &kp O         &kp P             &kp LBKT
+&kp TAB        &kp A          &kp S         &kp D         &kp F           &kp G                                      &kp H         &kp J         &kp K         &kp L         &kp COLON         &kp SQT
+&kp LSHFT      &kp Z          &kp X         &kp C         &kp V           &kp B         &to BASE       &kp F24       &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH          &kp RSHFT 
+                              &kp LGUI      &kp LALT      &kp LCTRL       &kp SPACE     &kp BSLH       &kp RET       &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
