@@ -81,6 +81,14 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release; // delay positional check until key-release
         };
+
+        /* mod morphs */        
+        rem: rem { // tap: backspace | shift + tap: delete
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     /* combos */
@@ -110,11 +118,11 @@
         default_layer {
             display-name = "main";
             bindings = <
-&gresc         &kp N1         &kp N2        &kp N3        &kp N4         &kp N5                                         &kp N6       &kp N7         &kp N8        &kp N9        &kp N0            &none
-&kp ESC        &kp Q          &kp W         &kp E         &kp R          &kp T                                          &kp Y        &kp U          &kp I         &kp O         &kp P             &kp BSPC
-&kp TAB        &hml LGUI A    &hml LALT S   &hml LCTRL D  &hml LSHFT F   &kp G                                          &kp H        &hmr RSHFT J   &hmr RCTRL K  &hmr RALT L   &hmr RGUI SEMI    &kp DEL
-&sk LSHFT      &kp Z          &kp X         &kp C         &kp V          &kp B             &none          &none         &kp N        &kp M          &kp COMMA     &kp DOT       &kp FSLH          &sk RSHFT 
-                              &none         &none         &mo FN         &kp SPACE         &mo SYM        &mo NUM       &kp RET      &mo NAV        &none         &none  
+&none          &none          &none           &none       &none          &none                                          &none        &none          &none         &none         &none             &none
+&none          &kp Q          &kp W         &kp E         &kp R          &kp T                                          &kp Y        &kp U          &kp I         &kp O         &kp P             &none
+&none          &hml LGUI A    &hml LALT S   &hml LCTRL D  &hml LSHFT F   &kp G                                          &kp H        &hmr RSHFT J   &hmr RCTRL K  &hmr RALT L   &hmr RGUI SEMI    &none
+&none          &kp Z          &kp X         &kp C         &kp V          &kp B             &none          &none         &kp N        &kp M          &kp COMMA     &kp DOT       &kp FSLH          &none
+                              &none         &none         &lt FN ESC     &kp SPACE         &mo SYM        &mo NAV       &lt NUM RET  &rem           &none         &none  
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT >;
@@ -138,7 +146,7 @@
             bindings = <
 &none          &none           &none           &none         &none           &none                                         &none           &none         &none         &none        &none             &none
 &trans         &none           &none           &none         &none           &none                                         &kp KP_ASTERISK &kp FSLH      &kp PLUS      &kp MINUS    &kp EQUAL         &trans
-&trans         &kp N1          &kp N2          &kp N3        &kp N4          &kp N5                                        &kp N6          &kp N7        &kp N8        &kp N9       &kp N0            &trans
+&trans         &hml LGUI N1    &hml LALT N2    &hml LCTRL N3 &hml LSHFT N4   &kp N5                                        &kp N6          &hmr RSHFT N7 &hmr RCTRL N8 &hmr RALT N9 &hmr RGUI N0      &trans
 &trans         &none           &none           &none         &none           &none           &none          &none          &none           &none         &none         &kp DOT      &none             &trans 
                                &none           &none         &trans          &trans          &trans         &trans         &trans          &trans        &none         &none
             >;
