@@ -100,15 +100,15 @@
 
     combos {
         compatible = "zmk,combos";
-        game_mode { // lower + raise -> game layer
+        game_mode { // space + enter -> game layer
             timeout-ms = <50>;
             key-positions = <53 56>;
-            bindings = <&to GAME1>;
+            bindings = <&to GAME>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
 
-        cfg_mode { // space + enter -> cfg layer
+        cfg_mode { // lower + raise -> cfg layer
             timeout-ms = <50>;
             key-positions = <54 55>;
             bindings = <&to CFG>;
