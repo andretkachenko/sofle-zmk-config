@@ -129,9 +129,9 @@
             slow-release;
         };
 
-        TOGGLE_LAYER(FN, 52)
-        TOGGLE_LAYER(NUM, 56)
-        TOGGLE_LAYER(NAV, 57)
+        TOGGLE_LAYER(FN, 52);
+        TOGGLE_LAYER(NUM, 56);
+        TOGGLE_LAYER(NAV, 57);
     };
 
     keymap {
