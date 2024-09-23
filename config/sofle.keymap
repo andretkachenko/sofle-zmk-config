@@ -41,6 +41,23 @@
 // thumb keys
 #define THUMBS 50 51 52 53 54 55 56 57 58 59
 
+#define TOGGLE_LAYER(layer, lt_pos) \
+    layer ## _mode_left { \
+        timeout-ms = <50>: \
+        key-positions = <29 lt_pos>; \
+        bindings = <&to layer>; \
+        require-prior-idle-ms = <IDLE_MS>; \
+        slow-release; \
+    }; \
+ \
+    layer ## _mode_left { \
+        timeout-ms = <50>: \
+        key-positions = <30 lt_pos>; \
+        bindings = <&to layer>; \
+        require-prior-idle-ms = <IDLE_MS>; \
+        slow-release; \
+    };
+
 &led_strip {
     chain-length = <35>;
 };
@@ -88,27 +105,6 @@
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        }; 
-
-        mrfn: mrfn { // tap: ESC | GUI + tap: toggle FN layer | hold: FN layer
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&lt FN ESC>, <&to FN>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };        
-
-        mrnm: mrnm { // tap: RET | GUI + tap: toggle NUM layer | hold: NUM layer
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&lt NUM RET>, <&to NUM>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };        
-
-        mrnv: mrnv { // tap: DEL | GUI + tap: toggle NAV layer | hold: NAV layer
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&lt NAV DEL>, <&to NAV>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
         };
     };
 
@@ -116,6 +112,7 @@
 
     combos {
         compatible = "zmk,combos";
+
         game_mode { // space + enter -> uni layer
             timeout-ms = <50>;
             key-positions = <53 56>;
@@ -131,6 +128,10 @@
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
+
+        TOGGLE_LAYER(FN, 52)
+        TOGGLE_LAYER(NUM, 56)
+        TOGGLE_LAYER(NAV, 57)
     };
 
     keymap {
