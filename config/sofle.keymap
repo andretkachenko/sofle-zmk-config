@@ -41,23 +41,6 @@
 // thumb keys
 #define THUMBS 50 51 52 53 54 55 56 57 58 59
 
-#define TOGGLE_LAYER(layer, lt_pos) \
-    layer ## _mode_left { \
-        timeout-ms = <50>: \
-        key-positions = <29 lt_pos>; \
-        bindings = <&to layer>; \
-        require-prior-idle-ms = <IDLE_MS>; \
-        slow-release; \
-    }; \
- \
-    layer ## _mode_left { \
-        timeout-ms = <50>: \
-        key-positions = <30 lt_pos>; \
-        bindings = <&to layer>; \
-        require-prior-idle-ms = <IDLE_MS>; \
-        slow-release; \
-    };
-
 &led_strip {
     chain-length = <35>;
 };
@@ -109,7 +92,6 @@
     };
 
     /* combos */
-
     combos {
         compatible = "zmk,combos";
 
@@ -128,10 +110,6 @@
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
-
-        TOGGLE_LAYER(FN, 52);
-        TOGGLE_LAYER(NUM, 56);
-        TOGGLE_LAYER(NAV, 57);
     };
 
     keymap {
@@ -144,7 +122,7 @@
 &none          &kp Q          &kp W         &kp E         &kp R          &kp T                                          &kp Y           &kp U           &kp I         &kp O            &kp P            &none
 &none          &hml LGUI A    &hml LALT S   &hml LCTRL D  &hml LSHFT F   &kp G                                          &kp H           &hmr RSHFT J    &hmr RCTRL K  &hmr RALT L      &hmr RGUI SEMI   &none
 &none          &kp Z          &kp X         &kp C         &kp V          &kp B             &none          &none         &kp N           &kp M           &kp COMMA     &kp DOT          &kp FSLH         &none
-                              &none         &none         &mrfn          &kp SPACE         &lt SYM TAB    &rem          &mrnm           &mrnv           &none         &none  
+                              &none         &none         &lt FN ESC     &kp SPACE         &lt SYM TAB    &lt NUM RET   &rem            &lt NAV DEL     &none         &none  
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT >;
@@ -157,7 +135,7 @@
 &trans         &kp PG_DN      &kp HOME        &kp UP         &kp END         &kp PG_UP                                  &none           &none           &none         &none           &none             &none
 &trans         &kp DEL        &kp LEFT        &kp DOWN       &kp RIGHT       &kp INS                                    &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &none
 &trans         &kp PSCRN      &kp PAUSE_BREAK &key_repeat    &caps_word      &kp LC(Y)     &none          &none         &to BASE        &to NUM         &to NAV       &to FN          &none             &none
-                              &none           &none          &kp ESC         &kp SPACE     &kp TAB        &rem          &kp RET         &kp DEL         &none         &none  
+                              &none           &none          &kp ESC         &kp SPACE     &kp TAB        &kp RET       &rem            &kp DEL         &none         &none  
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -170,7 +148,7 @@
 &trans         &none           &none           &none         &none           &none                                      &kp KP_ASTERISK &kp FSLH        &kp PLUS      &kp MINUS       &kp EQUAL         &none
 &trans         &hml LGUI N1    &hml LALT N2    &hml LCTRL N3 &hml LSHFT N4   &kp N5                                     &kp N6          &hmr RSHFT N7   &hmr RCTRL N8 &hmr RALT N9    &hmr RGUI N0      &none
 &trans         &none           &none           &none         &none           &none           &none        &none         &to BASE        &to NUM         &to NAV       &to FN          &kp DOT           &none 
-                               &none           &none         &kp ESC         &kp SPACE       &kp TAB      &rem          &kp RET         &kp DEL         &none         &none
+                               &none           &none         &kp ESC         &kp SPACE       &kp TAB      &kp RET       &rem            &kp DEL         &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -183,7 +161,7 @@
 &trans         &none          &none         &none         &none           &kp DEL                                       &kp LBKT        &kp RBKT        &kp MINUS     &kp EQUAL       &none             &none
 &trans         &kp LGUI       &kp LALT      &kp LCTRL     &kp LSHFT       &kp ENTER                                     &kp SQT         &kp RSHFT       &kp LPAR      &kp RPAR        &none             &none
 &trans         &none          &none         &none         &none           &none            &none          &none         &kp FSLH        &kp BSLH        &kp GRAVE     &none           &none             &none
-                              &none         &none         &kp ESC         &kp SPACE        &kp TAB        &rem          &kp RET         &kp DEL         &none         &none
+                              &none         &none         &kp ESC         &kp SPACE        &kp TAB        &kp RET       &rem            &kp DEL         &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -196,7 +174,7 @@
 &trans         &kp F1         &kp F2        &kp F3        &kp F4          &kp F5                                        &none           &kp C_PREV      &kp C_PP      &kp C_NEXT      &none             &none
 &trans         &kp F6         &kp F7        &kp F8        &kp F9          &kp F10                                       &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &none
 &trans         &kp F11        &kp F12       &kp F22       &kp F23         &kp F24          &none          &none         &to BASE        &to NUM         &to NAV       &to FN          &none             &none
-                              &none         &none         &kp ESC         &kp LSHFT        &to BASE       &rem          &kp RET         &kp DEL         &none         &none
+                              &none         &none         &kp ESC         &kp LSHFT        &to BASE       &kp RET       &rem            &kp DEL         &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
