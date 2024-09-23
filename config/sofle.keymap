@@ -82,23 +82,33 @@
             hold-trigger-on-release; // delay positional check until key-release
         };
 
-        tt: tt { // toggle tap | hold: toggle layer | tap: key press
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <TAP_TIME_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
-            require-prior-idle-ms = <IDLE_MS>;
-            bindings = <&to>, <&kp>;
-            hold-trigger-on-release; // delay positional check until key-release
-        };
-
         /* mod morphs */        
         rem: rem { // tap: backspace | shift + tap: delete
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        }; 
+
+        mrfn: mrfn { // tap: ESC | GUI + tap: toggle FN layer | hold: FN layer
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&lt FN ESC>, <&to FN>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };        
+
+        mrnm: mrnm { // tap: RET | GUI + tap: toggle NUM layer | hold: NUM layer
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&lt NUM RET>, <&to NUM>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };        
+
+        mrnv: mrnv { // tap: DEL | GUI + tap: toggle NAV layer | hold: NAV layer
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&lt NAV DEL>, <&to NAV>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
         };
     };
 
@@ -133,7 +143,7 @@
 &none          &kp Q          &kp W         &kp E         &kp R          &kp T                                          &kp Y           &kp U           &kp I         &kp O            &kp P            &none
 &none          &hml LGUI A    &hml LALT S   &hml LCTRL D  &hml LSHFT F   &kp G                                          &kp H           &hmr RSHFT J    &hmr RCTRL K  &hmr RALT L      &hmr RGUI SEMI   &none
 &none          &kp Z          &kp X         &kp C         &kp V          &kp B             &none          &none         &kp N           &kp M           &kp COMMA     &kp DOT          &kp FSLH         &none
-                              &none         &none         &tt FN ESC     &kp SPACE         &lt SYM TAB    &rem          &tt NUM RET     &to NAV         &none         &none  
+                              &none         &none         &mrfn          &kp SPACE         &lt SYM TAB    &rem          &mrnm           &mrnv           &none         &none  
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT >;
