@@ -1,7 +1,7 @@
 #include <behaviors.dtsi>
 
-#include "layers.h"
-#include "timings.h"
+#include "include/layers.h"
+#include "include/timings.h"
 
 combos {
     compatible = "zmk,combos";
