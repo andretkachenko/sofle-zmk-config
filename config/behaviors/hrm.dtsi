@@ -1,6 +1,6 @@
 #include <behaviors.dtsi>
 
-#include "definitions/timings.h"
+#include "../include/timings.h"
 
 behaviors {
     /* left-hand HRMs */
