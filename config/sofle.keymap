@@ -136,7 +136,7 @@
 &trans         &kp PG_DN      &kp HOME        &kp UP         &kp END         &kp PG_UP                                  &none           &none           &none         &none           &none             &none
 &trans         &kp DEL        &kp LEFT        &kp DOWN       &kp RIGHT       &kp INS                                    &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &none
 &trans         &kp PSCRN      &kp PAUSE_BREAK &key_repeat    &caps_word      &kp LC(Y)     &none          &none         &to BASE        &to NUM         &to NAV       &to FN          &to HUB           &none
-                              &none           &none          &kp ESC         &kp SPACE     &kp TAB        &kp RET       &rem            &kp DEL         &none         &none  
+                              &none           &none          &kp ESC         &kp SPACE     &lt SYM TAB    &kp RET       &rem            &kp DEL         &none         &none  
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -149,7 +149,7 @@
 &trans         &none           &none           &none         &none           &none                                      &kp KP_ASTERISK &kp FSLH        &kp PLUS      &kp MINUS       &kp EQUAL         &none
 &trans         &hml LGUI N1    &hml LALT N2    &hml LCTRL N3 &hml LSHFT N4   &kp N5                                     &kp N6          &hmr RSHFT N7   &hmr RCTRL N8 &hmr RALT N9    &hmr RGUI N0      &none
 &trans         &none           &none           &none         &none           &none           &none        &none         &to BASE        &to NUM         &to NAV       &to FN          &kp DOT           &none 
-                               &none           &none         &kp ESC         &kp SPACE       &kp TAB      &kp RET       &rem            &kp DEL         &none         &none
+                               &none           &none         &kp ESC         &kp SPACE       &lt SYM TAB  &kp RET       &rem            &kp DEL         &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -162,7 +162,7 @@
 &trans         &none          &none         &none         &none           &kp DEL                                       &kp LBKT        &kp RBKT        &kp MINUS     &kp EQUAL       &none             &none
 &trans         &kp LGUI       &kp LALT      &kp LCTRL     &kp LSHFT       &kp RET                                       &kp SQT         &kp RSHFT       &kp LPAR      &kp RPAR        &none             &none
 &trans         &none          &none         &none         &none           &to HUB          &none          &none         &kp FSLH        &kp BSLH        &kp GRAVE     &none           &none             &none
-                              &none         &none         &kp ESC         &kp SPACE        &kp TAB        &kp RET       &rem            &kp DEL         &none         &none
+                              &none         &none         &kp ESC         &kp SPACE        &lt SYM TAB    &kp RET       &rem            &kp DEL         &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -175,7 +175,7 @@
 &trans         &kp F1         &kp F2        &kp F3        &kp F4          &kp F5                                        &none           &kp C_PREV      &kp C_PP      &kp C_NEXT      &none             &none
 &trans         &kp F6         &kp F7        &kp F8        &kp F9          &kp F10                                       &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &none
 &trans         &kp F11        &kp F12       &kp F22       &kp F23         &kp F24          &none          &none         &to BASE        &to NUM         &to NAV       &to FN          &none             &none
-                              &none         &none         &kp ESC         &kp LSHFT        &to BASE       &kp RET       &rem            &kp DEL         &none         &none
+                              &none         &none         &to BASE        &kp LSHFT        &lt SYM TAB    &kp RET       &rem            &kp DEL         &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -201,7 +201,7 @@
 &none          &bt BT_CLR     &none         &none         &none           &none                                         &rgb_ug RGB_SAD &rgb_ug RGB_SAI &none         &none           &none             &none
 &none          &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4                                  &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none         &rgb_ug RGB_EFF &rgb_ug RGB_TOG   &none
 &none          &none          &none         &none         &none           &none            &none          &none         &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none         &none           &none             &none 
-                              &none         &none         &none           &none            &none          &to BASE      &none           &none           &none         &none
+                              &none         &none         &to BASE        &none            &mo SYM        &none         &none           &none           &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
