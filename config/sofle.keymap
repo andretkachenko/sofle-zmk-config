@@ -17,8 +17,9 @@
 #define NUM  2
 #define SYM  3
 #define FN   4
-#define SYS  5
-#define UNI  6
+#define HUB  5
+#define SYS  6
+#define UNI  7
 
 // timings
 #define TAP_TIME_MS 250   
@@ -134,7 +135,7 @@
 &none          &none          &none           &none          &none           &none                                      &none           &none           &none         &none           &none             &none
 &trans         &kp PG_DN      &kp HOME        &kp UP         &kp END         &kp PG_UP                                  &none           &none           &none         &none           &none             &none
 &trans         &kp DEL        &kp LEFT        &kp DOWN       &kp RIGHT       &kp INS                                    &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &none
-&trans         &kp PSCRN      &kp PAUSE_BREAK &key_repeat    &caps_word      &kp LC(Y)     &none          &none         &to BASE        &to NUM         &to NAV       &to FN          &none             &none
+&trans         &kp PSCRN      &kp PAUSE_BREAK &key_repeat    &caps_word      &kp LC(Y)     &none          &none         &to BASE        &to NUM         &to NAV       &to FN          &to HUB           &none
                               &none           &none          &kp ESC         &kp SPACE     &kp TAB        &kp RET       &rem            &kp DEL         &none         &none  
             >;
 
@@ -159,8 +160,8 @@
             bindings = <
 &none          &none          &none         &none         &none           &none                                         &none           &none           &none         &none           &none             &none
 &trans         &none          &none         &none         &none           &kp DEL                                       &kp LBKT        &kp RBKT        &kp MINUS     &kp EQUAL       &none             &none
-&trans         &kp LGUI       &kp LALT      &kp LCTRL     &kp LSHFT       &kp ENTER                                     &kp SQT         &kp RSHFT       &kp LPAR      &kp RPAR        &none             &none
-&trans         &none          &none         &none         &none           &none            &none          &none         &kp FSLH        &kp BSLH        &kp GRAVE     &none           &none             &none
+&trans         &kp LGUI       &kp LALT      &kp LCTRL     &kp LSHFT       &kp RET                                       &kp SQT         &kp RSHFT       &kp LPAR      &kp RPAR        &none             &none
+&trans         &none          &none         &none         &none           &to HUB          &none          &none         &kp FSLH        &kp BSLH        &kp GRAVE     &none           &none             &none
                               &none         &none         &kp ESC         &kp SPACE        &kp TAB        &kp RET       &rem            &kp DEL         &none         &none
             >;
 
@@ -175,6 +176,19 @@
 &trans         &kp F6         &kp F7        &kp F8        &kp F9          &kp F10                                       &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &none
 &trans         &kp F11        &kp F12       &kp F22       &kp F23         &kp F24          &none          &none         &to BASE        &to NUM         &to NAV       &to FN          &none             &none
                               &none         &none         &kp ESC         &kp LSHFT        &to BASE       &kp RET       &rem            &kp DEL         &none         &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        hub {
+            display-name = "hub";
+            bindings = <
+&none          &none          &none         &none         &none           &none                                         &none           &none           &none         &none           &none             &none
+&trans         &none          &none         &none         &none           &none                                         &none           &none           &none         &none           &none             &none
+&trans         &to BASE       &to NUM       &to NAV       &to FN          &none                                         &none           &none           &none         &none           &none             &none
+&trans         &to SYS        &to UNI       &none         &none           &none            &none          &none         &none           &none           &none         &none           &none             &none
+                              &none         &none         &kp ESC         &kp SPACE        &kp TAB        &kp RET       &rem            &kp DEL         &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
