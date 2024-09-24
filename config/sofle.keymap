@@ -11,9 +11,9 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#include <layers.h>
-#include <timings.h>
-#include <key_positions.h>
+#include "layers.h"
+#include "timings.h"
+#include "key_positions.h"
 
 #include "../../settings/sofle.dtsi"
 
