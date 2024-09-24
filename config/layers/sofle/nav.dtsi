@@ -1,4 +1,4 @@
-#include "../include/layers.h"
+#include "../../include/layers.h"
 
 nav {
     display-name = "nav";
