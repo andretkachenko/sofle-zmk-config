@@ -1,4 +1,4 @@
-\ {
+/ {
     behaviors {     
         rem: rem { // tap: backspace | shift + tap: delete
             compatible = "zmk,behavior-mod-morph";
