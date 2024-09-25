@@ -1,3 +1,4 @@
+#include <behaviors.dtsi>
 #include "../../include/layers.h"
 
 nav {
