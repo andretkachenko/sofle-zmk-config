@@ -10,6 +10,7 @@
 #include "include/key_positions.h"
 
 #include "settings/sofle.dtsi"
+#include "combos.dtsi"
 
 / {
     behaviors {
@@ -48,7 +49,6 @@
         };
     };
 
-    #include "combos.dtsi"
 
     keymap {
         compatible = "zmk,keymap";
