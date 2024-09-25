@@ -47,8 +47,27 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
-    
-    #include "combos.dtsi"
+
+    /* combos */
+    combos {
+        compatible = "zmk,combos";
+
+        game_mode { // space + enter -> uni layer
+            timeout-ms = <50>;
+            key-positions = <53 56>;
+            bindings = <&to UNI>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        };
+
+        sys_mode { // SYM + NUM -> sys layer
+            timeout-ms = <50>;
+            key-positions = <54 55>;
+            bindings = <&to SYS>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
