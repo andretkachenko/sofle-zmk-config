@@ -1,29 +1,21 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/rgb.h>
-#include <dt-bindings/zmk/outputs.h>
+/ {
+    combos {
+        compatible = "zmk,combos";
 
-#include "include/layers.h"
-#include "include/timings.h"
+        game_mode { // space + enter -> uni layer
+            timeout-ms = <50>;
+            key-positions = <53 56>;
+            bindings = <&to UNI>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        };
 
-combos {
-    compatible = "zmk,combos";
-
-    game_mode { // space + enter -> uni layer
-        timeout-ms = <50>;
-        key-positions = <53 56>;
-        bindings = <&to UNI>;
-        require-prior-idle-ms = <IDLE_MS>;
-        slow-release;
-    };
-
-    sys_mode { // SYM + NUM -> sys layer
-        timeout-ms = <50>;
-        key-positions = <54 55>;
-        bindings = <&to SYS>;
-        require-prior-idle-ms = <IDLE_MS>;
-        slow-release;
+        sys_mode { // SYM + NUM -> sys layer
+            timeout-ms = <50>;
+            key-positions = <54 55>;
+            bindings = <&to SYS>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        };
     };
 };
