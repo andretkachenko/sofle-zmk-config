@@ -15,18 +15,7 @@
 #include "include/timings.h"
 #include "include/key_positions.h"
 
-&led_strip {
-    chain-length = <35>;
-};
-
-&left_encoder {
-    resolution = <2>;
-};
-
-&sk {  // sticky-key config
-    release-after-ms = <900>;  // release after 0.9s
-    quick-release;             // no double capitalization when rolling keys
-};
+#include "settings/sofle.dtsi"
 
 / {
     behaviors {
