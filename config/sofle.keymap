@@ -18,8 +18,8 @@
 #include "settings/sofle.dtsi"
 
 / {
-    #include "behaviors/hrm.dtsi"
-    #include "behaviors/mod_morphs.dtsi"
+    #include "custom_behaviors/hrm.dtsi"
+    #include "custom_behaviors/mod_morphs.dtsi"
     #include "combos.dtsi"
 
     keymap {
