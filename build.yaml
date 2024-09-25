@@ -20,11 +20,11 @@
 include:
   - board: nice_nano_v2
     shield: sofle_left
-    cmake-args: -DKEYMAP_FILE=../../config/boards/shields/sofle_36/sofle_36.keymap
+    cmake-args: -DKEYMAP_FILE=../../config/sofle_36.keymap
     artifact-name: sofle_36_left-nice_nano_v2-zmk
   - board: nice_nano_v2
     shield: sofle_right
-    cmake-args: -DKEYMAP_FILE=../../config/boards/shields/sofle_36/sofle_36.keymap
+    cmake-args: -DKEYMAP_FILE=../../config/sofle_36.keymap
     artifact-name: sofle_36_right-nice_nano_v2-zmk
   - board: nice_nano_v2
     shield: settings_reset
