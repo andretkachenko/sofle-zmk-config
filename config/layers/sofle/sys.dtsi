@@ -1,15 +1,18 @@
-#include <behaviors.dtsi>
-#include "../../include/layers.h"
-
-sys {
-    display-name = "sys";
-    bindings = <
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        
+        sys {
+            display-name = "sys";
+            bindings = <
 &none          &none          &none         &none         &none           &none                                         &none           &none           &none         &none           &none             &none
 &none          &bt BT_CLR     &none         &none         &none           &none                                         &rgb_ug RGB_SAD &rgb_ug RGB_SAI &none         &none           &none             &none
 &none          &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4                                  &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none         &rgb_ug RGB_EFF &rgb_ug RGB_TOG   &none
 &none          &none          &none         &none         &none           &none            &none          &none         &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none         &none           &none             &none 
-                              &none         &none         &to BASE        &none            &mo SYM        &none         &none           &none           &none         &none
-    >;
+                            &none         &none         &to BASE        &none            &mo SYM        &none         &none           &none           &none         &none
+            >;
 
-    sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+    };
 };

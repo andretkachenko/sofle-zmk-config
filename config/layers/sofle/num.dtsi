@@ -1,15 +1,18 @@
-#include <behaviors.dtsi>
-#include "../../include/layers.h"
-
-num {
-    display-name = "num";
-    bindings = <
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        
+        num {
+            display-name = "num";
+            bindings = <
 &none          &none           &none           &none         &none           &none                                      &none           &none           &none         &none           &none             &none
 &trans         &none           &none           &none         &none           &none                                      &kp KP_ASTERISK &kp FSLH        &kp PLUS      &kp MINUS       &kp EQUAL         &none
 &trans         &hml LGUI N1    &hml LALT N2    &hml LCTRL N3 &hml LSHFT N4   &kp N5                                     &kp N6          &hmr RSHFT N7   &hmr RCTRL N8 &hmr RALT N9    &hmr RGUI N0      &none
 &trans         &none           &none           &none         &none           &none           &none        &none         &to BASE        &to NUM         &to NAV       &to FN          &kp DOT           &none 
-                               &none           &none         &kp ESC         &kp SPACE       &lt SYM TAB  &kp RET       &rem            &kp DEL         &none         &none
-    >;
+                            &none           &none         &kp ESC         &kp SPACE       &lt SYM TAB  &kp RET       &rem            &kp DEL         &none         &none
+            >;
 
-    sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+    };
 };

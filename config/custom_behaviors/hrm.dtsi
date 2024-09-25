@@ -1,39 +1,37 @@
-#include <behaviors.dtsi>
+/ {
+    behaviors {
+        /* left-hand HRMs */
+        hml: hml {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAP_TIME_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
+            require-prior-idle-ms = <IDLE_MS>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release; // delay positional check until key-release
+        };
 
-#include "../include/timings.h"
+        /* right-hand HRMs */
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAP_TIME_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
+            require-prior-idle-ms = <IDLE_MS>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release; // delay positional check until key-release
+        };
 
-behaviors {
-    /* left-hand HRMs */
-    hml: hml {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "balanced";
-        tapping-term-ms = <TAP_TIME_MS>;
-        quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
-        require-prior-idle-ms = <IDLE_MS>;
-        bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_R THUMBS>;
-        hold-trigger-on-release; // delay positional check until key-release
-    };
-
-    /* right-hand HRMs */
-    hmr: hmr {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "balanced";
-        tapping-term-ms = <TAP_TIME_MS>;
-        quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
-        require-prior-idle-ms = <IDLE_MS>;
-        bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_L THUMBS>;
-        hold-trigger-on-release; // delay positional check until key-release
-    };
-
-    /* mod morphs */        
-    rem: rem { // tap: backspace | shift + tap: delete
-        compatible = "zmk,behavior-mod-morph";
-        #binding-cells = <0>;
-        bindings = <&kp BSPC>, <&kp DEL>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        /* mod morphs */        
+        rem: rem { // tap: backspace | shift + tap: delete
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 };

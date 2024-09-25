@@ -1,8 +1,5 @@
-
-    
-    behaviors {
-
-        /* mod morphs */        
+\ {
+    behaviors {     
         rem: rem { // tap: backspace | shift + tap: delete
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -10,3 +7,4 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
+};
