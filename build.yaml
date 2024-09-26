@@ -18,6 +18,7 @@
 #
 ---
 include:
+  # 36 key layout
   - board: nice_nano_v2
     shield: sofle_left
     cmake-args: -DKEYMAP_FILE=../../config/sofle_36.keymap
@@ -26,5 +27,19 @@ include:
     shield: sofle_right
     cmake-args: -DKEYMAP_FILE=../../config/sofle_36.keymap
     artifact-name: sofle_36_right-nice_nano_v2-zmk
+
+  # debug layout
+  - board: nice_nano_v2
+    shield: sofle_left
+    cmake-args: -DKEYMAP_FILE=../../config/sofle_36.keymap
+    artifact-name: sofle_debug_left-nice_nano_v2-zmk
+    snippet: zmk-usb-logging
+  - board: nice_nano_v2
+    shield: sofle_right
+    cmake-args: -DKEYMAP_FILE=../../config/sofle_36.keymap
+    artifact-name: sofle_debug_right-nice_nano_v2-zmk
+    snippet: zmk-usb-logging
+
+  # reset board
   - board: nice_nano_v2
     shield: settings_reset
