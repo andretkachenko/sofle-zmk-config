@@ -1,0 +1,214 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// layers
+#define BASE 0
+#define NAV  1
+#define NUM  2
+#define SYM  3
+#define FN   4
+#define SYS  5
+#define UNI  6
+
+// timings
+#define TAP_TIME_MS 250   
+#define QUICK_TAP_MS 175                              
+#define IDLE_MS 150
+
+// left-hand keys
+// leftmost column (0, 12, 24, 36) skipped as they are used for modificators (esc, tab, shift)
+#define KEYS_L 1  2  3  4  5 \
+               13 14 15 16 17 \
+               25 26 27 28 29 \
+               37 38 39 40 41
+
+// right-hand keys
+#define KEYS_R 6  7  8  9  10 11 \
+               18 19 20 21 22 23 \
+               30 31 32 33 34 35 \
+               44 45 46 47 48 49 // indexes 42 and 43 missing because they are reserved for encoders
+
+// thumb keys
+#define THUMBS 50 51 52 53 54 55 56 57 58 59
+
+&led_strip {
+    chain-length = <35>;
+};
+
+&left_encoder {
+    resolution = <2>;
+};
+
+&sk {  // sticky-key config
+    release-after-ms = <900>;  // release after 0.9s
+    quick-release;             // no double capitalization when rolling keys
+};
+
+&lt {
+    tapping-term-ms = <TAP_TIME_MS>;
+};
+
+/ {
+    behaviors {
+        /* left-hand HRMs */
+        hml: hml {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAP_TIME_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
+            require-prior-idle-ms = <IDLE_MS>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release; // delay positional check until key-release
+        };
+
+        /* right-hand HRMs */
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAP_TIME_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>; // repeat on tap-into-hold
+            require-prior-idle-ms = <IDLE_MS>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release; // delay positional check until key-release
+        };
+
+        /* mod morphs */        
+        rem: rem { // tap: backspace | shift + tap: delete
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
+    /* combos */
+
+    combos {
+        compatible = "zmk,combos";
+        game_mode { // space + enter -> uni layer
+            timeout-ms = <50>;
+            key-positions = <53 56>;
+            bindings = <&to UNI>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        };
+
+        sys_mode { // SYM + NUM -> sys layer
+            timeout-ms = <50>;
+            key-positions = <54 55>;
+            bindings = <&to SYS>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        };
+
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "main";
+            bindings = <
+&none          &none          &none           &none       &none          &none                                          &none        &none          &none         &none         &none             &none
+&none          &kp Q          &kp W         &kp E         &kp R          &kp T                                          &kp Y        &kp U          &kp I         &kp O         &kp P             &none
+&none          &hml LGUI A    &hml LALT S   &hml LCTRL D  &hml LSHFT F   &kp G                                          &kp H        &hmr RSHFT J   &hmr RCTRL K  &hmr RALT L   &hmr RGUI SEMI    &none
+&none          &kp Z          &kp X         &kp C         &kp V          &kp B             &none          &none         &kp N        &kp M          &kp COMMA     &kp DOT       &kp FSLH          &none
+                              &none         &none         &none          &lt FN SPACE      &lt SYM TAB    &lt NAV ESC   &lt NUM RET  &none          &none         &none  
+            >;
+
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT >;
+        };
+
+        nav {
+            display-name = "nav";
+            bindings = <
+&none          &none          &none           &none          &none           &none                                      &none         &none         &none         &none         &none             &none
+&trans         &kp PG_DN      &kp HOME        &kp UP         &kp END         &kp PG_UP                                  &none         &none         &none         &none         &none             &trans
+&trans         &kp DEL        &kp LEFT        &kp DOWN       &kp RIGHT       &kp INS                                    &none         &kp RSHFT     &kp RCTRL     &kp RALT      &kp RGUI          &trans
+&trans         &kp PSCRN      &kp PAUSE_BREAK &key_repeat    &caps_word      &kp LC(Y)     &none          &none         &none         &none         &none         &none         &none             &trans
+                              &none           &none          &trans          &kp SPACE     &kp TAB        &kp ESC       &kp RET       &trans        &none         &none  
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        num {
+            display-name = "num";
+            bindings = <
+&none          &none           &none           &none         &none           &none                                         &none           &none         &none         &none        &none             &none
+&trans         &none           &none           &none         &none           &none                                         &kp KP_ASTERISK &kp FSLH      &kp PLUS      &kp MINUS    &kp EQUAL         &trans
+&trans         &hml LGUI N1    &hml LALT N2    &hml LCTRL N3 &hml LSHFT N4   &kp N5                                        &kp N6          &hmr RSHFT N7 &hmr RCTRL N8 &hmr RALT N9 &hmr RGUI N0      &trans
+&trans         &none           &none           &kp BSPC      &kp DEL         &none           &none          &none          &none           &none         &none         &kp DOT      &none             &trans 
+                               &none           &none         &trans          &kp SPACE       &kp TAB        &kp ESC        &kp RET          &trans        &none         &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        sym {
+            display-name = "sym";
+            bindings = <
+&none          &none          &none         &none         &none           &none                                         &none         &none         &none         &none         &none             &none
+&trans         &none          &none         &none         &none           &kp DEL                                       &kp LBKT      &kp RBKT      &kp MINUS     &kp EQUAL     &none             &trans
+&trans         &kp LGUI       &kp LALT      &kp LCTRL     &kp LSHFT       &kp ENTER                                     &kp SQT       &kp RSHFT     &kp LPAR      &kp RPAR      &none             &trans
+&trans         &none          &none         &kp BSPC      &kp DEL         &none            &none          &none         &kp FSLH      &kp BSLH      &kp GRAVE     &none         &none             &trans
+                              &none         &none         &trans          &kp SPACE        &kp TAB        &kp ESC       &kp RET        &trans        &none         &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        fn {
+            display-name = "fn";
+            bindings = <
+&none          &none          &none         &none         &none           &none                                         &none         &none           &none         &none       &none             &none
+&trans         &kp F1         &kp F2        &kp F3        &kp F4          &kp F5                                        &none         &none           &none         &none       &none             &trans
+&trans         &kp F6         &kp F7        &kp F8        &kp F9          &kp F10                                       &none         &kp RSHFT       &kp RCTRL     &kp RALT    &kp RGUI          &trans
+&trans         &kp F11        &kp F12       &kp F22       &kp F23         &kp F24          &none          &none         &none         &kp C_PREV      &kp C_PP      &kp C_NEXT  &none             &trans
+                              &none         &none         &trans          &kp SPACE        &kp TAB        &kp ESC       &kp RET        &trans          &none         &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        sys {
+            display-name = "sys";
+            bindings = <
+&none          &none          &none         &none         &none           &none                                         &none           &none           &none         &none           &none             &none
+&none          &bt BT_CLR     &none         &none         &none           &none                                         &rgb_ug RGB_SAD &rgb_ug RGB_SAI &none         &none           &none             &none
+&none          &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4                                  &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none         &rgb_ug RGB_EFF &rgb_ug RGB_TOG   &none
+&none          &none          &none         &none         &none           &none            &none          &none         &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none         &none           &none             &none 
+                              &none         &none         &none           &none            &none          &to BASE      &none           &none           &none         &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        uni {
+            display-name = "uni";
+            bindings = <
+&kp ESC        &kp N1         &kp N2        &kp N3        &kp N4          &kp N5                                     &kp N6        &kp N7        &kp N8        &kp N9        &kp N0            &kp BSPC
+&kp GRAVE      &kp Q          &kp W         &kp E         &kp R           &kp T                                      &kp Y         &kp U         &kp I         &kp O         &kp P             &kp LBKT
+&kp TAB        &kp A          &kp S         &kp D         &kp F           &kp G                                      &kp H         &kp J         &kp K         &kp L         &kp COLON         &kp SQT
+&kp LSHFT      &kp Z          &kp X         &kp C         &kp V           &kp B         &to BASE       &kp F24       &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH          &kp RSHFT 
+                              &kp LGUI      &kp LALT      &kp LCTRL       &kp SPACE     &kp BSLH       &kp RET       &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+    };
+};
