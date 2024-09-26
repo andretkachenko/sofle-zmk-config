@@ -18,9 +18,15 @@
 #
 ---
 include:
+  # 34 key layout
   - board: nice_nano_v2
     shield: sofle_left
+    cmake-args: -DKEYMAP_FILE=../../config/sofle_34.keymap
+    artifact-name: sofle_34_left-nice_nano_v2-zmk
   - board: nice_nano_v2
     shield: sofle_right
+    cmake-args: -DKEYMAP_FILE=../../config/sofle_34.keymap
+    artifact-name: sofle_34_right-nice_nano_v2-zmk
+    
   - board: nice_nano_v2
     shield: settings_reset
