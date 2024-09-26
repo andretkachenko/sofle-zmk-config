@@ -1,0 +1,9 @@
+// settings, specific to the Sofle keyboard
+
+&led_strip {
+    chain-length = <35>;
+};
+
+&left_encoder {
+    resolution = <2>;
+};
