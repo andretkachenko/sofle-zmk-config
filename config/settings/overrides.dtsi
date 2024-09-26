@@ -4,3 +4,7 @@
     release-after-ms = <900>;  // release after 0.9s
     quick-release;             // no double capitalization when rolling keys
 };
+
+&lt {
+    tapping-term-ms = <TAP_TIME_MS>;
+};
