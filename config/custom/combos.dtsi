@@ -29,7 +29,7 @@
         cdel { // i + o -> del
             timeout-ms = <50>;
             key-positions = <20 21>;
-            bindings = <&kp ESC>;
+            bindings = <&kp DEL>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
