@@ -28,10 +28,18 @@
             slow-release;
         };
 
-        cbspc { // i + o -> bspc
+        cdel { // o + p -> bspc
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&kp BSPC>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        }
+
+        cbspc { // i + o -> del
             timeout-ms = <50>;
             key-positions = <20 21>;
-            bindings = <&kp BSPC>;
+            bindings = <&kp DEL>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
