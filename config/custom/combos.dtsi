@@ -17,5 +17,21 @@
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
+
+        cesc { // w + e -> esc
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&kp ESC>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        }
+
+        cdel { // i + o -> del
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp ESC>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        }
     };
 };
