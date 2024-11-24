@@ -2,7 +2,8 @@
     combos {
         compatible = "zmk,combos";
 
-        game_mode { // space + enter -> uni layer
+        //  layer toggles
+        uni_mode { // space + enter -> uni layer
             timeout-ms = <50>;
             key-positions = <53 56>;
             bindings = <&to UNI>;
@@ -18,6 +19,7 @@
             slow-release;
         };
 
+        // control buttons for small layouts
         cesc { // w + e -> esc
             timeout-ms = <50>;
             key-positions = <14 15>;
@@ -26,10 +28,10 @@
             slow-release;
         };
 
-        cdel { // i + o -> del
+        cbspc { // i + o -> bspc
             timeout-ms = <50>;
             key-positions = <20 21>;
-            bindings = <&kp DEL>;
+            bindings = <&kp BSPC>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
