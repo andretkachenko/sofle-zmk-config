@@ -34,7 +34,7 @@
             bindings = <&kp BSPC>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
-        }
+        };
 
         cbspc { // i + o -> del
             timeout-ms = <50>;
