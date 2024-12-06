@@ -6,10 +6,10 @@
             display-name = "fn";
             bindings = <
 &none          &none          &none         &none         &none           &none                                         &none           &none           &none         &none           &none             &none
-&trans         &kp F1         &kp F2        &kp F3        &kp F4          &kp F5                                        &none           &kp C_PREV      &kp C_PP      &kp C_NEXT      &none             &none
-&trans         &kp F6         &kp F7        &kp F8        &kp F9          &kp F10                                       &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &none
-&trans         &kp F11        &kp F12       &kp F22       &kp F23         &kp F24          &none          &none         &to BASE        &to NUM         &to NAV       &to FN          &none             &none
-                            &none         &none         &to BASE        &kp LSHFT        &lt SYM TAB    &kp RET       &rem            &kp DEL         &none         &none
+&trans         &kp F1         &kp F2        &kp F3        &kp F4          &kp F5                                        &kp LBKT        &kp RBKT        &kp MINUS     &kp EQUAL       &none             &none
+&trans         &hml LGUI F6   &hml LALT F7  &hml LCTRL F8 &hml LSHFT F9   &kp F10                                       &kp SQT         &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &none
+&trans         &kp F11        &kp F12       &kp F22       &kp F23         &kp F24          &none          &none         &kp BSLH        &kp GRAVE       &none         &none           &none             &none
+                              &none         &none         &none           &kp LSHFT        &lt FN TAB     &kp RET       &kp BSPC        &none           &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;

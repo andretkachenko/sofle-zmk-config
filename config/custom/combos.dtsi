@@ -2,24 +2,14 @@
     combos {
         compatible = "zmk,combos";
 
-        //  layer toggles
-        uni_mode { // space + enter -> uni layer
+        hub_mode { // f + b -> hub layer
             timeout-ms = <50>;
-            key-positions = <53 56>;
-            bindings = <&to UNI>;
+            key-positions = <28 41>;
+            bindings = <&to HUB>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
 
-        sys_mode { // SYM + NUM -> sys layer
-            timeout-ms = <50>;
-            key-positions = <54 55>;
-            bindings = <&to SYS>;
-            require-prior-idle-ms = <IDLE_MS>;
-            slow-release;
-        };
-
-        // control buttons for small layouts
         cesc { // w + e -> esc
             timeout-ms = <50>;
             key-positions = <14 15>;
@@ -28,18 +18,34 @@
             slow-release;
         };
 
-        cdel { // o + p -> bspc
+        cret { // e + r -> ret
             timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp BSPC>;
+            key-positions = <15 16>;
+            bindings = <&kp RET>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };
 
-        cbspc { // i + o -> del
+        cdell { // r + t -> del
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp DEL>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        };
+
+        cdelr { // i + o -> del
             timeout-ms = <50>;
             key-positions = <20 21>;
             bindings = <&kp DEL>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        };
+
+        cbspc { // o + p -> bspc
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&kp BSPC>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;
         };

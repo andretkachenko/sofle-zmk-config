@@ -9,16 +9,6 @@ include:
     cmake-args: -DKEYMAP_FILE=../../config/sofle_60.keymap
     artifact-name: sofle_60_right-nice_nano_v2-zmk
 
-  # 36 key layout
-  - board: nice_nano_v2
-    shield: sofle_left
-    cmake-args: -DKEYMAP_FILE=../../config/sofle_36.keymap
-    artifact-name: sofle_36_left-nice_nano_v2-zmk
-  - board: nice_nano_v2
-    shield: sofle_right
-    cmake-args: -DKEYMAP_FILE=../../config/sofle_36.keymap
-    artifact-name: sofle_36_right-nice_nano_v2-zmk
-
   # debug layout
   - board: nice_nano_v2
     shield: sofle_left

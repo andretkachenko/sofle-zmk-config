@@ -6,10 +6,10 @@
             display-name = "num";
             bindings = <
 &none          &none           &none           &none         &none           &none                                      &none           &none           &none         &none           &none             &none
-&trans         &none           &none           &none         &none           &none                                      &kp KP_ASTERISK &kp FSLH        &kp PLUS      &kp MINUS       &kp EQUAL         &none
-&trans         &hml LGUI N1    &hml LALT N2    &hml LCTRL N3 &hml LSHFT N4   &kp N5                                     &kp N6          &hmr RSHFT N7   &hmr RCTRL N8 &hmr RALT N9    &hmr RGUI N0      &none
-&trans         &none           &none           &none         &none           &none           &none        &none         &to BASE        &to NUM         &to NAV       &to FN          &kp DOT           &none 
-                            &none           &none         &kp ESC         &kp SPACE       &lt SYM TAB  &kp RET       &rem            &kp DEL         &none         &none
+&trans         &kp 7           &kp 8           &kp 9         &kp 0           &kp FSLH                                   &none           &none           &none         &none           &none             &none
+&trans         &kp 4           &kp 5           &kp 6         &kp MINUS       &kp KP_ASTERISK                            &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &none
+&trans         &kp 1           &kp 2           &kp 3         &kp EQUAL       &kp DOT         &none        &none         &none           &none           &none         &none           &none             &none 
+                               &none           &none         &none           &kp SPACE       &lt FN TAB   &kp RET       &kp BSPC        &none           &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
