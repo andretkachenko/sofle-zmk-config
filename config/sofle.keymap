@@ -35,9 +35,9 @@
     };
 };
 
-#include "layers/sofle/hub.dtsi"
 #include "layers/sofle/num.dtsi"
 #include "layers/sofle/nav.dtsi"
 #include "layers/sofle/uni.dtsi"
 #include "layers/sofle/fn.dtsi"
+#include "layers/sofle/hub.dtsi"
 #include "layers/sofle/sys.dtsi"

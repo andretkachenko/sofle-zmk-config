@@ -6,10 +6,10 @@
             display-name = "hub";
             bindings = <
 &none          &none          &none         &none         &none           &none                                         &none           &none           &none         &none           &none             &none
-&trans         &none          &none         &none         &none           &none                                         &none           &none           &none         &none           &none             &none
-&trans         &to BASE       &to NUM       &to NAV       &to FN          &none                                         &none           &none           &none         &none           &none             &none
-&trans         &to SYS        &to UNI       &none         &none           &none            &none          &none         &none           &none           &none         &none           &none             &none
-                            &none         &none         &kp ESC         &kp SPACE        &kp TAB        &kp RET       &rem            &kp DEL         &none         &none
+&none          &none          &none         &none         &none           &none                                         &none           &none           &none         &none           &none             &none
+&none          &to BASE       &to NUM       &to NAV       &to FN          &none                                         &none           &none           &none         &none           &none             &none
+&none          &to SYS        &to UNI       &none         &none           &none            &none          &none         &none           &none           &none         &none           &none             &none
+                              &none         &none         &none           &none            &none          &none         &none           &none           &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
