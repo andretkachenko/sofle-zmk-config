@@ -6,9 +6,9 @@
             display-name = "num";
             bindings = <
 &none          &none           &none           &none         &none           &none                                      &none           &none           &none         &none           &none             &none
-&trans         &kp 7           &kp 8           &kp 9         &kp 0           &kp FSLH                                   &none           &none           &none         &none           &none             &none
-&trans         &kp 4           &kp 5           &kp 6         &kp MINUS       &kp KP_ASTERISK                            &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &none
-&trans         &kp 1           &kp 2           &kp 3         &kp EQUAL       &kp DOT         &none        &none         &none           &none           &none         &none           &none             &none 
+&trans         &kp FSLH        &kp N7          &kp N8        &kp N9          &kp N0                                     &none           &none           &none         &none           &none             &none
+&trans         &kp KP_ASTERISK &kp N4          &kp N5        &kp N6          &kp MINUS                                  &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &none
+&trans         &kp DOT         &kp N1          &kp 2         &kp N3          &kp EQUAL       &none        &none         &none           &none           &none         &none           &none             &none
                                &none           &none         &none           &kp SPACE       &lt FN TAB   &kp RET       &kp BSPC        &none           &none         &none
             >;
 
