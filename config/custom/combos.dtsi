@@ -10,6 +10,14 @@
             slow-release;
         };
 
+        mouse_mode { // g + h -> mouse layer
+            timeout-ms = <50>;
+            key-positions = <29 30>;
+            bindings = <&tog MSE>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;        
+        }
+
         cesc { // w + e -> esc
             timeout-ms = <50>;
             key-positions = <14 15>;
