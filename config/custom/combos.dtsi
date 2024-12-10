@@ -16,7 +16,7 @@
             bindings = <&tog MSE>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;        
-        }
+        };
 
         cesc { // w + e -> esc
             timeout-ms = <50>;
