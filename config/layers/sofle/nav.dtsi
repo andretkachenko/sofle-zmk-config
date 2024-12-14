@@ -6,7 +6,7 @@
             display-name = "nav";
             bindings = <
 &trans         &trans         &trans          &trans         &trans          &trans                                     &trans          &trans          &trans        &trans          &trans            &trans
-&trans         &kp PG_DN      &kp HOME        &kp UP         &kp END         &kp PG_UP                                  &none           &kp C_PREV      &kp C_PP      &kp C_NEXT      &none             &trans
+&trans         &kp PG_UP      &kp HOME        &kp UP         &kp END         &kp PG_DN                                  &none           &kp C_PREV      &kp C_PP      &kp C_NEXT      &none             &trans
 &trans         &kp DEL        &kp LEFT        &kp DOWN       &kp RIGHT       &kp INS                                    &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &trans
 &trans         &kp PSCRN      &kp PAUSE_BREAK &key_repeat    &caps_word      &kp LC(Y)     &trans         &trans        &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT       &none             &trans
                               &trans          &trans         &trans          &kp SPACE     &lt FN TAB     &kp RET       &kp BSPC        &trans          &trans        &trans 
