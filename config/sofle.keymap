@@ -1,3 +1,7 @@
+// override default mouse speed, defaults in comments
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 300000  // 600
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+
 #include "settings/timings.h"
 #include "layers/sofle/names.h"
 #include "layouts/sofle.h"
