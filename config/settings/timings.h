@@ -3,5 +3,5 @@
 #define IDLE_MS 130
 
 // override default mouse speed, defaults in comments
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 3000  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
