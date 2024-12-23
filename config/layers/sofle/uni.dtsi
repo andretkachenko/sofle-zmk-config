@@ -1,6 +1,6 @@
 / {
     keymap {
-        compatible = "zmk,keymap,behavior-input-two-axis";
+        compatible = "zmk,keymap";
         
         uni {
             display-name = "uni";
