@@ -25,13 +25,5 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release; // delay positional check until key-release
         };
-
-        /* mod morphs */        
-        rem: rem { // tap: backspace | shift + tap: delete
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 };

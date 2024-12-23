@@ -14,7 +14,7 @@
 #include "settings/sofle.dtsi"
 
 #include "custom/hrm.dtsi"
-#include "custom/mod_morphs.dtsi"
+#include "custom/behaviors.dtsi"
 #include "custom/combos.dtsi"
 
 / {
@@ -31,7 +31,7 @@
                               &kp LGUI      &kp LALT      &kp LCTRL      &kp SPACE    &lt FN TAB     &lt NUM RET   &lt NAV BSPC &kp BSLH       &kp MINUS     &kp DEL  
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &rot_scrl>;
         };
     };
 };

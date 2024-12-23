@@ -1,6 +1,6 @@
 / {
     keymap {
-        compatible = "zmk,keymap";
+        compatible = "zmk,keymap,behavior-input-two-axis";
         
         hub {
             display-name = "hub";
@@ -12,7 +12,7 @@
                               &none         &none         &none           &none            &none          &none         &none           &none           &none         &none
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &rot_scrl>;
         };
     };
 };
