@@ -12,7 +12,7 @@
                                &trans          &trans        &trans          &kp SPACE       &kp TAB      &kp RET       &kp BSPC        &trans          &trans        &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LA(TAB) LS(LA(TAB)) &inc_dec_kp LC(Z) LC(Y)>;
+            sensor-bindings = <&inc_dec_kp LC(Y) LC(Z) &inc_dec_kp LC(TAB) LC(LS(TAB))>;
         };
     };
 };

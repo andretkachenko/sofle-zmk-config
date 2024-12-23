@@ -12,7 +12,7 @@
                               &none         &none         &none           &none            &none          &none         &none           &none           &none         &none
             >;
 
-            sensor-bindings = <&inc_dec_kp LA(TAB) LS(LA(TAB)) &inc_dec_kp LC(Z) LC(Y)>;
+            sensor-bindings = <&inc_dec_kp LC(Y) LC(Z) &inc_dec_kp LC(TAB) LC(LS(TAB))>;
         };
     };
 };
