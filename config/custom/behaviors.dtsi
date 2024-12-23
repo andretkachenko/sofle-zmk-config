@@ -8,7 +8,7 @@
 
         rot_scrl: rotary_mouse_scroll {
             compatible = "zmk,behavior-sensor-rotate,behavior-input-two-axis";
-            #sensor-binding-cells = <1>;
+            #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
         };     
     };
