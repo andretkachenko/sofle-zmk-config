@@ -5,11 +5,11 @@
         mouse {
             display-name = "mouse";
             bindings = <
-&trans         &trans         &trans          &trans         &trans          &trans                                        &trans          &trans          &trans         &trans          &trans            &none
-&trans         &trans         &mkp MB4        &mmv MOVE_UP   &mkp MB5        &trans                                        &trans          &trans          &msc SCRL_UP   &trans          &trans            &none
-&trans         &trans         &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans                                        &trans          &msc SCRL_LEFT  &msc SCRL_DOWN &msc SCRL_RIGHT &trans            &none
-&trans         &trans         &trans          &trans         &trans          &trans           &none          &none         &trans          &trans          &trans         &trans          &trans            &none
-                              &trans          &trans         &trans          &mkp LCLK        &mkp RCLK      &mkp MCLK     &trans          &trans          &trans         &none
+&trans         &trans         &trans          &trans         &trans          &trans                                        &trans          &trans          &trans         &trans          &trans            &trans
+&trans         &trans         &mkp MB4        &mmv MOVE_UP   &mkp MB5        &trans                                        &trans          &trans          &msc SCRL_UP   &trans          &trans            &trans
+&trans         &trans         &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans                                        &trans          &msc SCRL_LEFT  &msc SCRL_DOWN &msc SCRL_RIGHT &trans            &trans
+&trans         &trans         &trans          &trans         &trans          &trans           &trans         &trans        &trans          &trans          &trans         &trans          &trans            &trans
+                              &trans          &trans         &trans          &mkp LCLK        &mkp RCLK      &mkp MCLK     &trans          &trans          &trans         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &inc_dec_kp F15 F16>;
