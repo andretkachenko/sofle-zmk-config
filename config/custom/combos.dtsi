@@ -13,7 +13,7 @@
         mouse_mode { // g + h -> mouse layer
             timeout-ms = <50>;
             key-positions = <29 30>;
-            bindings = <&tog MSE>;
+            bindings = <&smart_mouse MSE>;
             require-prior-idle-ms = <IDLE_MS>;
             slow-release;        
         };
