@@ -1,3 +1,5 @@
+#include <behaviors/num_word.dtsi>
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -15,8 +17,16 @@
             key-positions = <29 30>;
             bindings = <&smart_mouse MSE>;
             require-prior-idle-ms = <IDLE_MS>;
-            slow-release;        
+            slow-release;
         };
+
+        numword { // f + g -> num word
+            timeout-ms = <50>;
+            key-positions = <28 29>;
+            bindings = <&num_word NUM>;
+            require-prior-idle-ms = <IDLE_MS>;
+            slow-release;
+        }
 
         cesc { // w + e -> esc
             timeout-ms = <50>;
