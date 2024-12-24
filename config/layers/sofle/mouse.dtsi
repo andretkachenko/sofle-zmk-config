@@ -1,6 +1,6 @@
 / {
     keymap {
-        compatible = "zmk,keymap,behavior-input-two-axis";
+        compatible = "zmk,keymap";
         
         mouse {
             display-name = "mouse";
@@ -12,7 +12,7 @@
                               &none           &none          &none           &mkp LCLK        &mkp RCLK      &mkp MCLK     &none           &none           &none          &none
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &rot_scrl>;
+            sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &inc_dec_kp F15 F16>;
         };
     };
 };

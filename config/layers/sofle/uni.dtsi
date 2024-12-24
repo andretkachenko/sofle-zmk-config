@@ -12,7 +12,7 @@
                               &kp LGUI      &kp LALT      &kp LCTRL       &kp SPACE       &mo FN          &kp RET       &kp LEFT        &kp UP          &kp DOWN      &kp RIGHT
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &rot_scrl>;
+            sensor-bindings = <&inc_dec_kp F13 F14 &inc_dec_kp F15 F16>;
         };
     };
 };
