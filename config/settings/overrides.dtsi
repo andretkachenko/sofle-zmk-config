@@ -1,4 +1,5 @@
 // overrides of standard settings, keyboard-agnostic
+#include <behaviors/num_word.dtsi>
 
 &sk {  // sticky-key config
     release-after-ms = <900>;  // release after 0.9s
@@ -19,4 +20,8 @@
     acceleration-exponent = <1>;      // 0
     time-to-max-speed-ms = <40>;      // 300
     delay-ms = <0>;                   // 0
+};
+
+&num_word {
+    ignore-modifiers;
 };
