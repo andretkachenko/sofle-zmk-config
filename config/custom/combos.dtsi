@@ -1,79 +1,26 @@
 #include <behaviors/num_word.dtsi>
 
+#define COMBO(NAME, POS, BIND) \
+        NAME { \
+            timeout-ms = <50>; \
+            key-positions = <POS>; \
+            bindings = <BIND>; \
+            require-prior-idle-ms = <IDLE_MS>; \
+            slow-release; \
+        };
+
 / {
     combos {
         compatible = "zmk,combos";
 
-        hub_mode { // f + b -> hub layer
-            timeout-ms = <50>;
-            key-positions = <28 41>;
-            bindings = <&to HUB>;
-            require-prior-idle-ms = <IDLE_MS>;
-            slow-release;
-        };
-
-        mouse_mode { // g + h -> mouse layer
-            timeout-ms = <50>;
-            key-positions = <29 30>;
-            bindings = <&smart_mouse MSE>;
-            require-prior-idle-ms = <IDLE_MS>;
-            slow-release;
-        };
-
-        numword { // f + g -> num word
-            timeout-ms = <50>;
-            key-positions = <28 29>;
-            bindings = <&num_word NUM>;
-            require-prior-idle-ms = <IDLE_MS>;
-            slow-release;
-        }
-
-        cesc { // w + e -> esc
-            timeout-ms = <50>;
-            key-positions = <14 15>;
-            bindings = <&kp ESC>;
-            require-prior-idle-ms = <IDLE_MS>;
-            slow-release;
-        };
-
-        cret { // e + r -> ret
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp RET>;
-            require-prior-idle-ms = <IDLE_MS>;
-            slow-release;
-        };
-
-        cdell { // r + t -> del
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp DEL>;
-            require-prior-idle-ms = <IDLE_MS>;
-            slow-release;
-        };
-
-        cdelr { // i + o -> del
-            timeout-ms = <50>;
-            key-positions = <20 21>;
-            bindings = <&kp DEL>;
-            require-prior-idle-ms = <IDLE_MS>;
-            slow-release;
-        };
-
-        cbspc { // o + p -> bspc
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp BSPC>;
-            require-prior-idle-ms = <IDLE_MS>;
-            slow-release;
-        };
-
-        capp { // , + . -> application (context menu)
-            timeout-ms = <50>;
-            key-positions = <46 47>;
-            bindings = <&kp K_APP>;
-            require-prior-idle-ms = <IDLE_MS>;
-            slow-release;
-        };
+        COMBO(hub_mode, 28 41, &to HUB)             // f + b -> hub layer
+        COMBO(mouse_mode, 29 30, &smart_mouse MSE)  // g + h -> mouse layer
+        COMBO(numword, 28 29, &num_word NUM)        // f + g -> num word
+        COMBO(cesc, 14 15, &kp ESC)                 // w + e -> esc
+        COMBO(cret, 15 16, &kp RET)                 // e + r -> ret
+        COMBO(cdell, 16 17, &kp DEL)                // r + t -> del
+        COMBO(cdelr, 20 21, &kp DEL)                // i + o -> del
+        COMBO(cbspc, 21 22, &kp BSPC)               // o + p -> bspc
+        COMBO(capp, 46 47, &kp K_APP)               // , + . -> application (context menu)
     };
 };
