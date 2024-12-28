@@ -13,15 +13,15 @@
     combos {
         compatible = "zmk,combos";
 
-        COMBO(hub_mode, 28 41, &to HUB)             // f + b -> hub layer
-        COMBO(mouse_mode, 29 30, &smart_mouse MSE)  // g + h -> mouse layer
-        COMBO(numword, 28 29, &num_word NUM)        // f + g -> num word
-        COMBO(cesc, 14 15, &kp ESC)                 // w + e -> esc
-        COMBO(cret, 15 16, &kp RET)                 // e + r -> ret
-        COMBO(ctab, 38 39, &kp TAB)                 // x + c -> tab
-        COMBO(cdell, 16 17, &kp DEL)                // r + t -> del
-        COMBO(cdelr, 20 21, &kp DEL)                // i + o -> del
-        COMBO(cbspc, 21 22, &kp BSPC)               // o + p -> bspc
-        COMBO(capp, 46 47, &kp K_APP)               // , + . -> application (context menu)
+        COMBO(combo_hub_mode, 28 41, &to HUB)             // f + b -> hub layer
+        COMBO(combo_mouse_mode, 29 30, &smart_mouse MSE)  // g + h -> mouse layer
+        COMBO(combo_numword, 28 29, &num_word NUM)        // f + g -> num word
+        COMBO(combo_esc, 14 15, &kp ESC)                 // w + e -> esc
+        COMBO(combo_ret, 15 16, &kp RET)                 // e + r -> ret
+        COMBO(combo_tab, 38 39, &kp TAB)                 // x + c -> tab
+        COMBO(combo_dell, 16 17, &kp DEL)                // r + t -> del
+        COMBO(combo_delr, 20 21, &kp DEL)                // i + o -> del
+        COMBO(combo_bspc, 21 22, &kp BSPC)               // o + p -> bspc
+        COMBO(combo_app, 46 47, &kp K_APP)               // , + . -> application (context menu)
     };
 };
