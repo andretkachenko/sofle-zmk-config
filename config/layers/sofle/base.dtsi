@@ -9,7 +9,7 @@
 &kp GRAVE      &kp Q          &kp W         &kp E         &kp R          &kp T                                     &kp Y        &kp U          &kp I         &kp O         &kp P             &kp LBKT
 &kp TAB        &hml LGUI A    &hml LALT S   &hml LCTRL D  &hml LSHFT F   &kp G                                     &kp H        &hmr RSHFT J   &hmr RCTRL K  &hmr RALT L   &hmr RGUI SEMI    &kp SQT
 &sk LSHFT      &kp Z          &kp X         &kp C         &kp V          &kp B        &kp F24        &kp C_MUTE    &kp N        &kp M          &kp COMMA     &kp DOT       &kp FSLH          &sk RSHFT 
-                              &kp LGUI      &kp LALT      &kp LCTRL      &kp SPACE    &lt FN TAB     &lt NUM RET   &lt NAV BSPC &kp BSLH       &kp MINUS     &kp DEL  
+                              &kp LGUI      &kp LALT      &kp LCTRL      &kp SPACE    &mo FN         &lt NUM RET   &lt NAV BSPC &kp BSLH       &kp MINUS     &kp DEL  
             >;
 
             sensor-bindings = <&inc_dec_kp F13 F14 &inc_dec_kp F15 F16>;

@@ -18,6 +18,7 @@
         COMBO(numword, 28 29, &num_word NUM)        // f + g -> num word
         COMBO(cesc, 14 15, &kp ESC)                 // w + e -> esc
         COMBO(cret, 15 16, &kp RET)                 // e + r -> ret
+        COMBO(ctab, 38 39, &kp TAB)                 // x + c -> tab
         COMBO(cdell, 16 17, &kp DEL)                // r + t -> del
         COMBO(cdelr, 20 21, &kp DEL)                // i + o -> del
         COMBO(cbspc, 21 22, &kp BSPC)               // o + p -> bspc
