@@ -1,6 +1,10 @@
 // overrides of standard settings, keyboard-agnostic
 #include <behaviors/num_word.dtsi>
 
+// mouse speed
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // 10
+
 &sk {  // sticky-key config
     release-after-ms = <900>;  // release after 0.9s
     quick-release;             // no double capitalization when rolling keys
