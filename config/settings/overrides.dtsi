@@ -5,15 +5,6 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // 10
 
-&sk {  // sticky-key config
-    release-after-ms = <900>;  // release after 0.9s
-    quick-release;             // no double capitalization when rolling keys
-};
-
-&lt {
-    tapping-term-ms = <TAP_TIME_MS>;
-};
-
 &mmv {
     acceleration-exponent = <1>;      // 1
     time-to-max-speed-ms = <500>;     // 300
@@ -24,6 +15,15 @@
     acceleration-exponent = <1>;      // 0
     time-to-max-speed-ms = <40>;      // 300
     delay-ms = <0>;                   // 0
+};
+
+&sk {  // sticky-key config
+    release-after-ms = <900>;  // release after 0.9s
+    quick-release;             // no double capitalization when rolling keys
+};
+
+&lt {
+    tapping-term-ms = <250>;
 };
 
 &num_word {
