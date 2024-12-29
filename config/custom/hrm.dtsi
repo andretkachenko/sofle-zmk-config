@@ -1,29 +1,19 @@
-/ {
-    behaviors {
-        /* left-hand HRMs */
-        hml: hml {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <250>;
-            quick-tap-ms = <175>; // repeat on tap-into-hold
-            require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>;
-            hold-trigger-on-release; // delay positional check until key-release
+#define HRM(NAME, POS) \
+        NAME: NAME { \
+            compatible = "zmk,behavior-hold-tap"; \
+            #binding-cells = <2>; \
+            flavor = "balanced"; \
+            tapping-term-ms = <250>; \
+            quick-tap-ms = <175>; \ // repeat on tap-into-hold
+            require-prior-idle-ms = <150>; \
+            bindings = <&kp>, <&kp>; \
+            hold-trigger-key-positions = <POS>; \
+            hold-trigger-on-release; \ // delay positional check until key-release
         };
 
-        /* right-hand HRMs */
-        hmr: hmr {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <250>;
-            quick-tap-ms = <175>; // repeat on tap-into-hold
-            require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L THUMBS>;
-            hold-trigger-on-release; // delay positional check until key-release
-        };
+/ {
+    behaviors {
+        HRM(hml, KEYS_R THUMBS) // left-hand HRMs
+        HRM(hmr, KEYS_L THUMBS) // right-hand HRMs
     };
 };
