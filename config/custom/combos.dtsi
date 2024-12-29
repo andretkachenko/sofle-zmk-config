@@ -2,7 +2,7 @@
 
 #define COMBO(NAME, POS, BIND) \
         NAME { \
-            timeout-ms = <50>; \
+            timeout-ms = <30>; \
             key-positions = <POS>; \
             bindings = <BIND>; \
             require-prior-idle-ms = <150>; \
