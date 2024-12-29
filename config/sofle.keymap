@@ -1,15 +1,15 @@
 #include "layers/sofle/names.h"
 #include "layouts/sofle.h"
 
-#include "settings/overrides.dtsi"
-#include "settings/sofle.dtsi"
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
+
+#include "settings/overrides.dtsi"
+#include "settings/sofle.dtsi"
 
 #include "custom/hrm.dtsi"
 #include "custom/behaviors.dtsi"

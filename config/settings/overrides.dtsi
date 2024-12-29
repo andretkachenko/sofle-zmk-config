@@ -1,23 +1,5 @@
 // overrides of standard settings, keyboard-agnostic
-
-// mouse speed
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // 10
-
 #include <behaviors/num_word.dtsi>
-#include <dt-bindings/zmk/pointing.h>
-
-&mmv {
-    acceleration-exponent = <1>;      // 1
-    time-to-max-speed-ms = <500>;     // 300
-    delay-ms = <0>;                   // 0
-};
-
-&msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <40>;      // 300
-    delay-ms = <0>;                   // 0
-};
 
 &sk {  // sticky-key config
     release-after-ms = <900>;  // release after 0.9s
