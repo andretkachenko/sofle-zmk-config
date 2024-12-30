@@ -1,27 +1,31 @@
 #include <behaviors/num_word.dtsi>
 
-#define COMBO(NAME, POS, BIND) \
+#define COMBO(NAME, POS, BIND, TERM, IDLE) \
         NAME { \
-            timeout-ms = <30>; \
+            timeout-ms = <TERM>; \
             key-positions = <POS>; \
             bindings = <BIND>; \
-            require-prior-idle-ms = <150>; \
+            require-prior-idle-ms = <IDLE>; \
             slow-release; \
         };
+
+#define SLOW(NAME, POS, BIND) COMBO(NAME, POS, BIND, 50, 70)
+#define FAST(NAME, POS, BIND) COMBO(NAME, POS, BIND, 10, 150)
 
 / {
     combos {
         compatible = "zmk,combos";
 
-        COMBO(combo_hub_mode, 28 41, &to HUB) // f + b -> hub layer
-        COMBO(combo_mouse_mode, 29 30, &smart_mouse MSE) // g + h -> mouse layer
-        COMBO(combo_numword, 28 29, &num_word NUM) // f + g -> num word
-        COMBO(combo_esc, 14 15, &kp ESC) // w + e -> esc
-        COMBO(combo_ret, 15 16, &kp RET) // e + r -> ret
-        COMBO(combo_tab, 41 53, &kp TAB) // b + space -> tab
-        COMBO(combo_dell, 16 17, &kp DEL) // r + t -> del
-        COMBO(combo_delr, 20 21, &kp DEL) // i + o -> del
-        COMBO(combo_bspc, 21 22, &kp BSPC) // o + p -> bspc
-        COMBO(combo_app, 46 47, &kp K_APP) // , + . -> application (context menu)
+        SLOW(combo_hub_mode, 28 41, &to HUB) // f + b -> hub layer
+        SLOW(combo_mouse_mode, 29 30, &smart_mouse MSE) // g + h -> mouse layer
+
+        FAST(combo_numword, 28 29, &num_word NUM) // f + g -> num word
+        FAST(combo_esc, 14 15, &kp ESC) // w + e -> esc
+        FAST(combo_ret, 15 16, &kp RET) // e + r -> ret
+        FAST(combo_tab, 41 53, &kp TAB) // b + space -> tab
+        FAST(combo_dell, 16 17, &kp DEL) // r + t -> del
+        FAST(combo_delr, 20 21, &kp DEL) // i + o -> del
+        FAST(combo_bspc, 21 22, &kp BSPC) // o + p -> bspc
+        FAST(combo_app, 46 47, &kp K_APP) // , + . -> application (context menu)
     };
 };
