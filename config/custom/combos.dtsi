@@ -10,13 +10,13 @@
         };
 
 #define SLOW(NAME, POS, BIND) COMBO(NAME, POS, BIND, 50, 70)
-#define FAST(NAME, POS, BIND) COMBO(NAME, POS, BIND, 10, 150)
+#define FAST(NAME, POS, BIND) COMBO(NAME, POS, BIND, 25, 150)
 
 / {
     combos {
         compatible = "zmk,combos";
 
-        SLOW(combo_hub_mode, 28 41, &to HUB) // f + b -> hub layer
+        ghghghght // f + b -> hub layer
         SLOW(combo_mouse_mode, 29 30, &smart_mouse MSE) // g + h -> mouse layer
 
         FAST(combo_numword, 28 29, &num_word NUM) // f + g -> num word
