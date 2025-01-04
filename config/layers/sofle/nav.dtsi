@@ -12,7 +12,7 @@
                               &trans          &trans         &trans          &kp SPACE     &kp TAB        &kp RET       &kp BSPC        &trans          &trans        &trans 
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &rot_scrl>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &rot_scrl>;
         };
     };
 };
