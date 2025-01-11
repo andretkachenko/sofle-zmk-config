@@ -9,8 +9,8 @@
             slow-release; \
         };
 
-#define SLOW(NAME, POS, BIND) COMBO(NAME, POS, BIND, 50, 70)
-#define FAST(NAME, POS, BIND) COMBO(NAME, POS, BIND, 25, 150)
+#define SLOW(NAME, POS, BIND) COMBO(NAME, POS, BIND, 50, 100)
+#define FAST(NAME, POS, BIND) COMBO(NAME, POS, BIND, 20, 200)
 
 / {
     combos {
