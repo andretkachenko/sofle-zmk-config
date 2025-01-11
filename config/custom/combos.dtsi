@@ -27,5 +27,7 @@
         FAST(combo_delr, 20 21, &kp DEL) // i + o -> del
         FAST(combo_bspc, 21 22, &kp BSPC) // o + p -> bspc
         FAST(combo_app, 46 47, &kp K_APP) // , + . -> application (context menu)
+        FAST(combo_mute, 39 40, &kp F23) // c + v -> F23
+        FAST(combo_deafen, 40 41, &kp F24) // v + b -> F24
     };
 };
