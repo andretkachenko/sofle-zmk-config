@@ -3,7 +3,7 @@
             compatible = "zmk,behavior-hold-tap"; \
             #binding-cells = <2>; \
             flavor = "balanced"; \
-            tapping-term-ms = <250>; \
+            tapping-term-ms = <200>; \
             quick-tap-ms = <175>; /* repeat on tap-into-hold */ \
             require-prior-idle-ms = <125>; \
             bindings = <&kp>, <&kp>; \
