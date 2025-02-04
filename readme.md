@@ -118,7 +118,7 @@ The tricky part is that encoders are also clickable, so they should be counted a
 12 13 14 15 16 17       18 19 20 21 22 23  
 24 25 26 27 28 29       30 31 32 33 34 35  
 36 37 38 39 40 41 42 43 44 45 46 47 48 49  
- 50 51 52 53 54 55 56 57 58 59  
+      50 51 52 53 54 55 56 57 58 59  
 ```
 I was constantly forgetting about the encoders, so I was getting a different combo than I wanted and because of that thought that combo didn't work at all.  
 Using [Nick Coutsos' Keyboard Editor](https://nickcoutsos.github.io/keymap-editor/) helped me to see visually my mistake.  
