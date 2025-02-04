@@ -13,7 +13,7 @@
 };
 
 &lt {
-    tapping-term-ms = <250>;
+    tapping-term-ms = <200>;
 };
 
 &num_word {
