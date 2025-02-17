@@ -5,10 +5,10 @@
         num {
             display-name = "num";
             bindings = <
-&trans         &trans          &trans          &trans         &trans          &trans                                    &trans          &trans          &trans        &trans          &trans            &trans
-&trans         &kp FSLH        &kp N7          &kp N8        &kp N9          &kp N0                                     &trans          &trans          &trans        &trans          &trans            &trans
-&trans         &kp STAR        &kp N4          &kp N5        &kp N6          &kp MINUS                                  &trans          &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &trans
-&trans         &kp DOT         &kp N1          &kp N2        &kp N3          &kp EQUAL       &none        &none         &trans          &trans          &trans        &trans          &trans            &trans
+&trans         &trans          &trans          &trans        &trans          &trans                                    &trans          &trans          &trans        &trans          &trans            &trans
+&trans         &kp FSLH        &kp N7          &kp N8        &kp N9          &kp N0                                    &trans          &trans          &trans        &trans          &trans            &trans
+&trans         &kp EQUAL       &kp N4          &kp N5        &kp N6          &kp KP_DOT                                &trans          &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &trans
+&trans         &kp MINUS       &kp N1          &kp N2        &kp N3          &kp STAR       &none        &none         &trans          &trans          &trans        &trans          &trans            &trans
                                &trans          &trans        &trans          &kp SPACE       &kp TAB      &kp RET       &kp BSPC        &trans          &trans        &trans
             >;
 
