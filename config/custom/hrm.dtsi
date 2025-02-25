@@ -1,9 +1,9 @@
-#define HRM(NAME, POS) \
+#define HRM(NAME, TERM, POS) \
         NAME: NAME { \
             compatible = "zmk,behavior-hold-tap"; \
             #binding-cells = <2>; \
             flavor = "balanced"; \
-            tapping-term-ms = <250>; \
+            tapping-term-ms = <TERM>; \
             quick-tap-ms = <175>; /* repeat on tap-into-hold */ \
             require-prior-idle-ms = <125>; \
             bindings = <&kp>, <&kp>; \
@@ -13,7 +13,12 @@
 
 / {
     behaviors {
-        HRM(hml, KEYS_R THUMBS) // left-hand HRMs
-        HRM(hmr, KEYS_L THUMBS) // right-hand HRMs
+        // left-hand HRMs
+        HRM(hmlf, 200, KEYS_R THUMBS) // slower for pinky and ring fingers
+        HRM(hmls, 250, KEYS_R THUMBS) // faster for middle and index fingers
+
+        // right-hand HRMs        
+        HRM(hmrf, 200, KEYS_L THUMBS) // slower for pinky and ring fingers
+        HRM(hmrs, 250, KEYS_L THUMBS) // faster for middle and index fingers
     };
 };
