@@ -8,7 +8,7 @@
 &trans         &trans         &trans        &trans        &trans          &trans                                &trans          &trans          &trans        &trans          &trans            &trans
 &trans         &kp F1         &kp F2        &kp F3        &kp F4          &kp F5                                &kp LBKT        &kp RBKT        &kp MINUS     &kp EQUAL       &none             &trans
 &trans         &hml LGUI F6   &hml LALT F7  &hml LCTRL F8 &hml LSHFT F9   &kp F10                               &kp SQT         &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &trans
-&trans         &kp F11        &kp F12       &kp F22       &kp F23         &kp F24       &trans     &trans       &kp BSLH        &kp GRAVE       &kp KP_LPAR   &kp KP_RPAR     &none             &trans
+&trans         &kp F11        &kp F12       &kp F22       &kp F23         &kp F24       &trans     &trans       &kp BSLH        &kp GRAVE       &none         &none           &none             &trans
                               &trans        &trans        &trans          &kp LSHFT     &kp TAB    &kp RET      &kp BSPC        &trans          &trans        &trans
             >;
 
