@@ -15,4 +15,4 @@
             sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &rot_scrl>;
         };
     };
-};s
+};
