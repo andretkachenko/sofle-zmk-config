@@ -22,9 +22,10 @@
 
         FAST(combo_esc, 14 15, &kp ESC) // w + e -> esc
         FAST(combo_tab, 15 16, &kp TAB) // e + r -> tab
-        FAST(combo_ret, 28 29, &kp RET) // f + g -> ret
-        FAST(combo_dell, 16 17, &kp DEL) // r + t -> del
-        FAST(combo_delr, 20 21, &kp DEL) // i + o -> del
+        FAST(combo_ret_l, 28 29, &kp RET) // f + g -> ret
+        FAST{combo_ret_r, 30 31, &kp RET} // h + j -> ret
+        FAST(combo_del_l, 16 17, &kp DEL) // r + t -> del
+        FAST(combo_del_r, 20 21, &kp DEL) // i + o -> del
         FAST(combo_bspc, 21 22, &kp BSPC) // o + p -> bspc
         FAST(combo_app, 46 47, &kp K_APP) // , + . -> application (context menu)
         FAST(combo_mute, 39 40, &kp F23) // c + v -> F23
