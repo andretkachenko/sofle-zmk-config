@@ -29,5 +29,6 @@
         FAST(combo_app, 46 47, &kp K_APP) // , + . -> application (context menu)
         FAST(combo_mute, 39 40, &kp F23) // c + v -> F23
         FAST(combo_deafen, 40 41, &kp F24) // v + b -> F24
+        FAST(combo_nav_mode, 38 39, &to NAV) // x + c -> nav layer
     };
 };
