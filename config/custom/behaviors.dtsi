@@ -18,5 +18,12 @@
             #binding-cells = <1>;
             continue-list = <LCLK RCLK MCLK MB4 MB5 MOVE_LEFT MOVE_DOWN MOVE_UP MOVE_RIGHT SCRL_LEFT SCRL_DOWN SCRL_UP SCRL_RIGHT>;
         };
+
+        nav_word: nav_word {
+            compatible = "zmk, behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <UP DOWN LEFT RIGHT PG_UP PG_DN>;
+            ignore-modifiers;
+        }
     };
 };
