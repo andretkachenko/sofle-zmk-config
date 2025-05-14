@@ -9,7 +9,7 @@
 &trans         &kp PG_UP      &kp HOME        &kp UP         &kp END         &kp PG_DN                                  &none           &kp C_PREV      &kp C_PP      &kp C_NEXT      &none             &trans
 &trans         &kp DEL        &kp LEFT        &kp DOWN       &kp RIGHT       &kp INS                                    &none           &kp RSHFT       &kp RCTRL     &kp RALT        &kp RGUI          &trans
 &trans         &kp PSCRN      &kp PAUSE_BREAK &key_repeat    &caps_word      &none         &trans         &trans        &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT       &none             &trans
-                              &trans          &trans         &trans          &kp SPACE     &kp TAB        &kp RET       &kp BSPC        &trans          &trans        &trans 
+                              &trans          &trans         &trans          &trans        &trans         &trans        &trans          &trans          &trans        &trans 
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &rot_scrl>;
