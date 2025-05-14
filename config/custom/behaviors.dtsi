@@ -24,6 +24,6 @@
             #binding-cells = <1>;
             continue-list = <UP DOWN LEFT RIGHT PG_UP PG_DN>;
             ignore-modifiers;
-        }
+        };
     };
 };
