@@ -8,7 +8,7 @@
 &kp ESC        &kp N1         &kp N2        &kp N3        &kp N4         &kp N5                                    &kp N6       &kp N7         &kp N8        &kp N9        &kp N0            &kp BSPC
 &kp GRAVE      &kp Q          &kp W         &kp E         &kp R          &kp T                                     &kp Y        &kp U          &kp I         &kp O         &kp P             &kp LBKT
 &kp TAB        &hmls LGUI A   &hmls LALT S  &hmlf LCTRL D &hmlf LSHFT F  &kp G                                     &lt NAV H    &hmrf RSHFT J  &hmrf RCTRL K &hmrs RALT L  &hmrs RGUI SEMI   &kp SQT
-&sk LSHFT      &kp Z          &kp X         &kp C         &kp V          &kp B        &kp F24        &kp C_MUTE    &lt NUM N    &kp M          &kp COMMA     &kp DOT       &kp FSLH          &sk RSHFT 
+&sk LSHFT      &kp Z          &kp X         &kp C         &kp V          &lt NUM B    &kp F24        &kp C_MUTE    &lt NUM N    &kp M          &kp COMMA     &kp DOT       &kp FSLH          &sk RSHFT 
                               &kp LGUI      &kp LALT      &kp LCTRL      &kp SPACE    &lt FN TAB     &kp RET       &kp BSPC     &kp BSLH       &kp MINUS     &kp DEL  
             >;
 
