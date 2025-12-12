@@ -18,8 +18,8 @@
 
         SLOW(combo_hub_mode, 29 53, &to HUB) // f + space -> hub layer
         SLOW(combo_mouse_mode, 29 30, &smart_mouse MSE) // g + h -> mouse layer
-        SLOW(combo_numword, 27 28, &num_word NUM) // d + f -> num word
-        SLOW(combo_navword, 26 27, &nav_word NAV) // s + d -> nav word
+        SLOW(combo_numword, 27 28, &num_word NUM) // d + f -> numword
+        SLOW(combo_navword, 26 27, &nav_word NAV) // s + d -> navword
 
         FAST(combo_esc, 14 15, &kp ESC) // w + e -> esc
         FAST(combo_tab, 15 16, &kp TAB) // e + r -> tab

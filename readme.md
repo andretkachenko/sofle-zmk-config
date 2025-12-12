@@ -22,7 +22,7 @@ Please refer to the table of contents below to go to the desired part.
 - [Useful info for new to split keyboards](#useful-info-for-new-to-split-keyboards)  
   - [DANGER ZONE](#danger-zone)  
   - [Why 34 key layout, when you have 58?](#why-34-key-layout-when-you-have-58)  
-  - [What are homerow mods](#what-are-homerow-mods)  
+  - [What are home row mods](#what-are-home-row-mods)  
   - [Key positions](#key-positions)  
   - [Bluetooth connectivity](#bluetooth-connectivity)  
   - [Issues when using with RDP/Gnome](#issues-when-using-with-rdpgnome)  
@@ -36,23 +36,23 @@ Please refer to the table of contents below to go to the desired part.
 # About config
 ## Layers
 Main 4 layers:  
-- `base` - main layer. Contains letters, modifiers via homerow mods and essentials on thumbs - `space`, `tab`, `enter`, `backspace`;  
-- `fn` - a combination of symbols on the right side and F1-F12 on the left side. They were on 2 separate layers at the first stages of config development, before I realized that they don't overlap, and I could reduce the number of layers. HRMs on the left side, regular modifiers on the right side;  
-- `num` - numpad on the left side, modifiers on a right side home row. Can be activated using the thumb key from the `base` layer, or by the `numword` combo on any layer;  
-- `nav` - navigation cluster and arrows from the full-sized keyboard on the left side; media controls and modifiers on the right side; arrows are also duplicated on the bottom row of the right side, mainly to control YouTube videos with one hand;  
-
+- `base` - main layer. Contains letters, modifiers via [home row mods](#what-are-home-row-mods) and essentials on thumbs - `space`, `tab`, `enter`, `backspace`;  
+- `fn` - a combination of symbols on the right side and F1-F12 on the left side. They were on 2 separate layers at the first stages of config development, before I realized that they don't overlap, and I could reduce the number of layers. [HRMs](#what-are-home-row-mods) on the left side, regular modifiers on the right side;  
+- `num` - home row becomes numbers, modifiers on centerward columns, top and bottom rows. Can be activated by holding either `b` or `n` (to allow crosshand usage - holding `b` while typing numbers 6-0, holding `n` while typing numbers 1-5) from the `base` layer, or by the [`numword` combo](config/custom/combos.dtsi)) on any layer;  
+- `nav` - navigation cluster and arrows from the full-sized keyboard on the left side; media controls and modifiers on the right side; arrows are also duplicated on the bottom row of the right side, mainly to control YouTube videos with one hand. Can be activated by holding `h` from the `base` layer, or by the [`navword` combo ](config/custom/combos.dtsi)) on any layer;  
+  
 While the previous 4 are used all the time, these 4 are niche and are utilized less frequently. For that reason, they have less accessible ways to activate:  
-- `hub` - allows you to activate any of 7 other layers; activated using combo from any layer, making it also a great bail-out if you accidentally activated something else - go to `hub`, then `base` and try again;  
-- `mouse` - mouse emulation; allows you to move cursor, use left, right and middle click, MB4 and MB5 and vertical and horizontal scrolls; activated from `hub` layer or combo;  
+- `hub` - allows you to activate any of 7 other layers; activated using [`hub layer` combo](config/custom/combos.dtsi))  from any layer, making it also a great bail-out if you accidentally activated something else - go to `hub`, then `base` and try again;  
+- `mouse` - mouse emulation; allows you to move cursor, use left, right and middle click, MB4 and MB5 and vertical and horizontal scrolls; activated from `hub` layer or [`mouse layer` combo](config/custom/combos.dtsi);  
 - `sys` - configurational layer; allows to control RGB and Bluetooth; only activated from `hub` layer;  
 - `uni` - "gaming" layer; regular 65% keyboard, no HRMs, standard layout (except caps lock); arrows on thumb cluster of the right-side part; only activated from `hub` layer;  
 
-## Timeless homerow mods
-This config uses [urob's implementation of the homerow mods](https://github.com/urob/zmk-config/tree/main?tab=readme-ov-file#timeless-homerow-mods), which eliminates all the issues people face when trying to use HRMs.  
-You can see the behaviors in [config/custom/hrm.dtsi](https://github.com/andretkachenko/sofle-zmk-config/blob/master/config/custom/hrm.dtsi).  
-Usage example: `&hmlf LSHFT F` or look at the [config/layers/sofle/base.dtsi](https://github.com/andretkachenko/sofle-zmk-config/blob/master/config/layers/sofle/base.dtsi).  
+## Timeless home row mods
+This config uses [urob's implementation of the home row mods](https://github.com/urob/zmk-config/tree/main?tab=readme-ov-file#timeless-homerow-mods), which eliminates all the issues people face when trying to use HRMs.  
+You can see the behaviors in [config/custom/hrm.dtsi](custom/hrm.dtsi).  
+Usage example: `&hmlf LSHFT F` or look at the [config/layers/sofle/base.dtsi](config/layers/sofle/base.dtsi).  
 
-If you don't know what homerow mods are, read the details in [the dedicated section below](#what-are-homerow-mods).  
+If you don't know what home row mods are, read the details in [the dedicated section below](#what-are-home-row-mods).  
 
 ## Combos
 Once again, heavily inspired by [urob](https://github.com/urob/zmk-config?tab=readme-ov-file#using-combos-instead-of-a-symbol-layer), but less extreme and made without his helpers. You can see them in [config/custom/combos.dtsi](https://github.com/andretkachenko/sofle-zmk-config/blob/master/config/custom/combos.dtsi).  
@@ -60,11 +60,11 @@ All I need to do in the `sofle.keymap` to make them work - add this line:
 ``` c
 #include "custom/combos.dtsi"
 ```
-All combos are separated into fast and slow. All combos that use two neighbouring (horizontally) keys are considered fast - they provide a smaller window between the first and the second keypress, with a longer idle period, ensuring they are not accidentally invoked by a key rollover. I still accidentally hit some of them, but it only happens because I hit 2 buttons with the same finger, and that's not a ZMK issue.  
+All combos are separated into **fast** and **slow**. All combos that use two neighbouring (horizontally) keys are considered fast - they provide a smaller window between the first and the second keypress, with a longer idle period, ensuring they are not accidentally invoked by a key rollover. I still accidentally hit some of them, but it only happens because I hit 2 buttons with the same finger, and that's not a ZMK issue.  
 
 Every other combo - two buttons on different halves, diagonal combo, vertical combo - is considered slow. They have bigger leniency (slightly bigger time window, slightly smaller prior idle time window). As these combos are harder to click faster, I often couldn't reliably invoke the combo.  
 
-**urob** also uses combos instead of symbol layer, but I decided against this idea due to the issues when using form the RDP (see section below).  
+**urob** also uses combos instead of symbol layer, but I decided against this idea due to the issues when using from the RDP (see [section below](#issues-when-using-with-rdpgnome)).  
 
 ## Smart layers
 These aren't just inspired by **urob** - they are his implementation.  
@@ -77,16 +77,16 @@ Mouse emulation has been finished and merged into the **main** branch ([PR](http
 
 It works perfectly, but you might need to tweak speed configurations a bit. I had some issues while tinkering with more advanced configurations, and one of the moderators in the Discord server gave me his configuration as an example. I quite liked it, so I incorporated it into my config.  
 
-I also used urob's [zmk-auto-layer](https://github.com/urob/zmk-auto-layer) to make my mouse layer into an auto layer, and also to add numword. Can't say that this is a game changer, and I might even revert it back to keep my config simpler and without dependencies, but it's neat and might be up someone's alley.  
+I also used **urob**'s [zmk-auto-layer](https://github.com/urob/zmk-auto-layer) to make my mouse layer into an auto layer, and also to add numword. Can't say that this is a game changer, and I might even revert it back to keep my config simpler and without dependencies, but it's neat and might be up someone's alley.  
 
 # Useful info for new to split keyboards
 I had to spend a lot of time to find out these bits of knowledge. I hope this helps someone to decrease the steep entry barrier.  
 
 ## DANGER ZONE
 **These are 2 things each owner of split keyboards should know from the start.**  
-That's why I put it at the top of this section - this information isn't common knowledge, yet it may cost you a keyboard. I had to solder a new controller myself because I fried the first one (I knew these dangers already at that time, but didn't follow strictly enough to avoid problems).  
+That's why I put it at the top of this section - this information isn't common knowledge, yet it may cost you a keyboard. I had to solder a new controller because I fried the first one (I knew these dangers already at that time, but didn't follow strictly enough to avoid problems).  
 - **DO NOT plug/unplug the TRRS cable when the USB cable is connected.** *This can short circuit your controller*, requiring quite pricey repair. In most scenarios, you don't have to unplug it at all - even when reflashing the firmware, you can keep this cable as-is. So I suggest you plug it once, and stop touching it; treat it as a single unit instead of two halves. If you need to pack it for travel - first unplug USB, then TRRS. When connecting to the computer - first plug in TRRS, then USB.  
-- If your keyboard supports both wired and wireless connection, make sure to **not connect both at the same time** - *you can destroy batteries*. If you want to use it wirelessly - unplug USB, unplug TRRS, switch power to wireless mode on both halves and then use it. If your keyboard doesn't have a power switch - either unplug the batteries and use the keyboard in a wired mode, or avoid using a wired connection at all.  
+- If your keyboard supports both wired and wireless connection, make sure to **not use both at the same time** - *you can destroy batteries*. If you want to use it wirelessly - unplug USB, unplug TRRS, switch power to wireless mode on both halves and then use it. If your keyboard doesn't have a power switch - either unplug the batteries and use the keyboard in a wired mode, or avoid using a wired connection at all.  
 
 ## Why 34 key layout, when you have 58?
 There's an idea that when we have to move our entire hand to reach any key, we are putting strain on it which it isn't supposed to do, damaging it.  
@@ -95,24 +95,26 @@ With a 34-key layout, you have only those keys, which are only 1 unit apart from
 - The outer column, which you're supposed to click using your pinkies, is removed to reduce strain on your weakest fingers;  
 
 This layout is impossible without the extensive use of layers. When we removed the outer column, we were left without modifiers - `Shift`, `Ctrl`, `Win`, `Alt` - which are essential when you do any kind of work on your computer. There are two ways to tackle it:  
-- Homerow mods - when a button from the home row is clicked, it behaves as a letter, like it is on a regular keyboard. However, when you hold it, instead of typing the letter until you let it go, the keyboard instead sends the modifier assigned to the key. For example, the `f` letter acts as `Left Shift` when held. It takes some time to get used to, but for me now it feels like second nature, and I feel discomfort when I have to use a keyboard without this feature. But, there is a possible issue when you receive misfires - `fj` instead of `J`, or triggering Start Menu with `Win` when you want to type `a`, etc. You can read how to solve it in [the homerow mods section below](#what-are-homerow-mods);  
-- Move modifiers to the combos and thumb cluster - I've seen some layouts do this, and people like them. In theory, that could also work for me well, but I discovered urob's timeless homerow mods early and liked them too much to consider this option. Just know, that there are small layouts without `HRMs`, and if you are interested, you just need to do some digging for inspiration;  
+- Home row mods - when a button from the home row is clicked, it behaves as a letter, like it is on a regular keyboard. However, when you hold it, instead of typing the letter until you let it go, the keyboard instead sends the modifier assigned to the key. For example, the `f` letter acts as `Left Shift` when held. It takes some time to get used to, but for me now it feels like second nature, and I feel discomfort when I have to use a keyboard without this feature. But, there is a possible issue when you receive misfires - `fj` instead of `J`, or triggering Start Menu with `Win` when you want to type `a`, etc. You can read how to solve it in [the home row mods section below](#what-are-home-row-mods);  
+- Move modifiers to the combos and thumb cluster - I've seen some layouts do this, and people like them. In theory, that could also work for me well, but I discovered **urob**'s timeless home row mods early and liked them too much to consider this option. Just know, that there are small layouts without `HRMs`, and if you are interested, you just need to do some digging for inspiration;  
 
 I was interested in trying 34 key keyboards even before I decided to spend my money to try custom keyboards. But I was concerned that I may not like it, or that it won't be enough for me (I'm gaming as well, and this is one of the scenarios, where you need more dedicated keys instead of less). So I decided to go with a Sofle as my first split keyboard. After that, I changed my layout iteratively, trying out different ideas and seeing if it gave me better comfort or not.  
 
 > Small keyboard layouts turned out to be a detriment in any non-casual games. For this reason, I created a dedicated `uni` layer, which operated like a more common nowadays 65% keyboard, just split into two.  
 
-## What are homerow mods?
+## What are home row mods?
+> You can read more detailed explanation [here](https://precondition.github.io/home-row-mods)  
+
 The idea is simple - when you tap a button, you receive its standard key press; when you hold it, you receive a modifier.  
 At first glance, it sounds like an ideal solution - the letter button doesn't need the `hold` behavior (when typing), modifier button doesn't need the `tap` behavior. You can combine them without an overlap. Great, right?  
 
 Yes, but there's a catch. You need to properly define the timings between the button being `pressed` and `held`. Too little - and you will receive modifiers when typing instead of your letter. Too big - you will have to wait for ages with a pressed button to receive the modifier.  
 This is the reason why a lot of people come to the conclusion that this is an idea good in theory, but bad in practice.  
 
-Lo and behold, urob's solution for this conundrum - [timeless homerow mods](https://github.com/urob/zmk-config/tree/main?tab=readme-ov-file#timeless-homerow-mods). You can read the details in his readme, but the gist is - same-hand key presses are considered taps when pressed within a certain threshold (`require-prior-idle-ms`). For same-hand operations, you just need to hold it longer. He also provides ways to tweak the configuration if you still receive any kind of misfires. I needed some tweaking, but after that - it feels like the best feature of this keyboard: the first driving point for me to try an unorthodox keyboard was a pain in my left pinkie for holding `Shift` and `Ctrl`. Now it's just a distant memory for me.  
+Lo and behold, urob's solution for this conundrum - [timeless home row mods](https://github.com/urob/zmk-config/tree/main?tab=readme-ov-file#timeless-homerow-mods). You can read the details in his readme, but the gist is - same-hand key presses are considered taps when pressed within a certain threshold (`require-prior-idle-ms`). For same-hand operations, you just need to hold it longer. He also provides ways to tweak the configuration if you still receive any kind of misfires. I needed some tweaking, but after that - it feels like the best feature of this keyboard: the first driving point for me to try an unorthodox keyboard was a pain in my left pinkie for holding `Shift` and `Ctrl`. Now it's just a distant memory for me.  
 
-Urob's config extensively uses his homemade helpers. I didn't want to have additional dependency, so I recreated them using simple C macro in the config. 
-You can see my configuration in `config/custom/hrm.dtsi` and the usage in `config/layers/sofle/base.dtsi`.  
+**urob**'s config extensively uses his homemade helpers. I didn't want to have additional dependency, so I recreated them using simple C macro in the config. 
+You can see my configuration in [`config/custom/hrm.dtsi`](config/custom/hrm.dtsi) and the usage in [`config/layers/sofle/base.dtsi`](config/layers//sofle/base.dtsi).  
 
 ## Key positions
 The official explanation for the key positions used in the ZMK explains indexing using only 0 and 1 indexes. The question remains after this example of how it works for a split keyboard - does it have indexes going left-to-right as if it's a single piece, or have separate indexes for each half with some kind of prefix explaining which half is it, etc.  
